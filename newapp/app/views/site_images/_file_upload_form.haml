@@ -1,0 +1,17 @@
+.dgreen_box
+  .dgreen_header
+    %div
+  .dgreen_content{:style => "padding: 0px 20px"}
+    
+    = error_messages_for :image
+    - form_for :image, @image, :url => site_images_path, :html => {:multipart => true, :id=>'file_upload_form'} do |f|
+      .button{:style=>'float:right'}
+        = link_to 'Upload Image', '#', :onclick => "$('file_upload_form').submit(); return false;"      
+      = f.file_field :uploaded_data
+
+      = submit_tag "Create", :class => 'dont_display'    
+
+      
+      .clearfloat
+  .dgreen_footer
+    %div

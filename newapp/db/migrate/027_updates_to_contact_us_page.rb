@@ -1,0 +1,8 @@
+class UpdatesToContactUsPage < ActiveRecord::Migration
+  def self.up
+    execute 'UPDATE `pages` SET `text` = "<div style=\"float:left; width: 250px;\">\r\nNorthwood Mortgage\r\n\r\n\"info@northwoodmortgage.com\":info@northwoodmortgage.com\r\n\r\n\r\n9050 Yonge Street #501,<br />\r\nRichmond Hill,<br />\r\nOntario<br />\r\nL4C 9S6<br />\r\n</div>\r\n\r\n<div style=\"float:right; width: 250px;\">\r\nPhone: 416-969-8130<br />\r\n1-888-257-8130<br/>\r\n<br/>\r\nFax: 905-889-2237\r\n</div>\r\n\r\n<div class=\"clearfloat\" style=\"margin-bottom: 15px;\"></div>\r\n\r\n!/images/content/map.gif!:http://maps.google.com/maps?f=q&hl=en&q=Northwood+Mortgage+9050+Yonge+Street+%23501,+Richmond+Hill,+Ontario&layer=&ie=UTF8&z=11&ll=43.906798,-79.423599&spn=0.385375,0.913239&om=1&iwloc=A", `html` = "<div style=\"float:left; width: 250px;\">\nNorthwood Mortgage\n\n	<p><a href=\"info@northwoodmortgage.com\">info@northwoodmortgage.com</a></p>\n\n\n9050 Yonge Street #501,<br />\nRichmond Hill,<br />\nOntario<br />\n<span class=\"caps\">L4C 9S6</span><br />\n</div>\n\n<div style=\"float:right; width: 250px;\">\nPhone: 416-969-8130<br />\n1-888-257-8130<br/>\n<br/>\nFax: 905-889-2237\n</div>\n\n<div class=\"clearfloat\" style=\"margin-bottom: 15px;\"></div>\n\n	<p><a href=\"http://maps.google.com/maps?f=q&#38;hl=en&#38;q=Northwood+Mortgage+9050+Yonge+Street+%23501,+Richmond+Hill,+Ontario&#38;layer=&#38;ie=UTF8&#38;z=11&#38;ll=43.906798,-79.423599&#38;spn=0.385375,0.913239&#38;om=1&#38;iwloc=A\"><img src=\"/images/content/map.gif\" alt=\"\" /></a></p>" WHERE `name` = "Contact Us";'
+  end
+  
+  def self.down
+  end
+end

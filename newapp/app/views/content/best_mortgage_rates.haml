@@ -1,0 +1,15 @@
+%h1 Mortgage Rates
+
+
+%table.best_mortgage_rate_table{:cellpadding => 0, :cellspacing => 0}
+  %tr
+    %th Term
+    %th Rate
+    
+            
+  - @rates.each do |rate|
+    %tr{:valign=>"top", :class=>"#{cycle('odd', 'even')}"}
+      %td= rate.term
+      %td= rate.rate
+
+= display_page('Mortgage Rates')

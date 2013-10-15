@@ -1,0 +1,24 @@
+- reminder = Reminder.new
+
+
+#new_reminder_link.add_new_record
+  = link_to_function('+ Add New Reminder') {|page| page.hide('new_reminder_link'); page.show('new_reminder')}
+
+
+#new_reminder{:style=>'display: none'}
+  -remote_form_for :reminder, reminder, :url => reminders_path(@user, @contact), :before => "Element.show($('reminder_add_icon'))" do |f|
+
+    = render :partial => 'reminders/form', :locals => {:f => f, :form => reminder}
+
+    = submit_tag 'Save', :id => 'reminder_new_form', :class => 'dont_display'
+  
+    = image_tag('updating.gif', :id => "reminder_add_icon", :style=>'display:none')
+  
+  
+    %div{:style => 'padding-left: 90px'}
+      = link_to 'Save', '#', :onclick => "$('reminder_new_form').click(); return false;"
+      = link_to_function('Cancel') {|page| page.show('new_reminder_link'); page.hide('new_reminder')}
+    
+    
+    
+    

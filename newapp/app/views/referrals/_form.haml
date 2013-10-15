@@ -1,0 +1,30 @@
+%dl.form_list
+  %dt
+    %label{:for=>"referral_name"} Name
+  %dd.user_form
+    = text_field 'referral', 'name', :onblur=>"$('referral_webpage_address').value = generate_webpage_address(this.value, '')"
+    
+  %dt
+    %label{:for=>"referral_email"} Email
+  %dd.user_form
+    = text_field 'referral', 'email'
+
+  %dt
+    %label{:for =>"referral_phone"} Direct Phone:
+  %dd.user_form
+    = text_field 'referral', 'phone'
+
+  %dt
+    %label{:for =>"referral_webpage_address"} Webpage:
+  %dd
+    = SITE_URL + '/referrals/'
+    = text_field 'referral', 'webpage_address', :style=>"width: 100px"
+
+
+
+%div{:style=>'margin: 20px 0;'}
+  %label{:for =>"referral_webpage_text"} Content for Agent's Home Page:
+  ~ textile_editor 'referral', 'webpage_text', 'cols' => 100, 'rows' => 20, :style=>"width: 453px"
+  = textile_editor_initialize
+
+.clearfloat

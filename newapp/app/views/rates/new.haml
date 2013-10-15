@@ -1,0 +1,16 @@
+%h1 Add Rate
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    = error_messages_for :rate
+    
+    - form_for :rate, @rate, :url => rates_path(), :html => {:method => :post, :id => "new_rate_form"} do |f|
+      = render :partial => 'form'
+      = submit_tag "Create", :class => 'dont_display'
+
+    .button
+      = link_to 'Cancel', rates_path()
+    .button
+      = link_to 'Save', '#', :onclick => "$('new_rate_form').submit(); return false;"
+    .clearfloat

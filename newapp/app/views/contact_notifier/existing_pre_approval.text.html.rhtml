@@ -1,0 +1,21 @@
+<p>Dear <b><%=@contact.full_name%></b></p>
+
+<p>Thank you for submitting your Pre-Approval Application.</p>
+
+<p>
+  Looks like we already have some of your information (shown below) in our system.
+  <br/>If you need to update your information, please contact us.
+</p>
+
+<ul>
+  <li><b>Name:</b> <%= @contact.full_name %></li>
+  <li><b>Address:</b> <%= nl2br @contact.address %></li>
+  <li><b>Home Phone:</b> <%= @contact.phone %></li>
+  <li><b>Mobile Phone:</b> <%= @contact.mobile %></li>
+  <li><b>Fax:</b> <%= @contact.fax %></li>
+  <li><b>Email:</b> <%= @contact.email %></li>
+</ul>
+
+<p>Sincerely,
+<br/>Northwood Mortgage
+</p>

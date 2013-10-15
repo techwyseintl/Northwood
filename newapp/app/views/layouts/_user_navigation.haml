@@ -1,0 +1,7 @@
+- if @user
+
+  %h1= "#{@user.name_for_header(@current_user)} #{section}"
+  .header_links
+    = link_to @user.name_for_header(@current_user) + " Details", user_path(@user), :class => (section=='Details' ? 'active' : '')
+    |
+    = link_to @user.name_for_header(@current_user) + " Contacts", contacts_path(@user), :class => (section=='Contacts' ? 'active' : '')

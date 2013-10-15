@@ -1,0 +1,21 @@
+%h1 Rate Watch Sign-Up
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    = error_messages_for 'contact'
+
+    - if @agent
+      - form_for :contact, @contact, :url => agent_rate_watch_signup_path(@agent.webpage_address), :html => {:method => :post, :id => 'contact_create_form'} do |f| 
+        = render :partial => 'form'
+        = submit_tag 'Save', :class => 'dont_display'
+    - else
+      - form_for :contact, @contact, :url => rate_watch_signup_path(), :html => {:method => :post, :id => 'contact_create_form'} do |f| 
+        = render :partial => 'form'
+        = submit_tag 'Save', :class => 'dont_display'
+      
+
+    .button
+      = link_to 'Submit', '#', :onclick => "$('contact_create_form').submit(); return false;"
+    .clearfloat 

@@ -1,0 +1,23 @@
+<p>
+  Dear <%=@user.full_name%>
+</p>
+<p>
+  This message was sent to you via Northwood messaging system.
+</p>
+<p>
+  New contact just signed up:
+</p>
+<ul>
+  <li>Name: <%= @contact.full_name %></li>
+  <li>Address: <%= nl2br @contact.address %></li>
+  <li>Phone: <%= @contact.phone %></li>
+  <li>Mobile: <%= @contact.mobile %></li>
+  <li>Fax: <%= @contact.fax %></li>
+  <li>Email: <%= @contact.email %></li>
+  <li>Note: <%= nl2br @contact.notes %></li>
+</ul>
+<p>
+  Sincerely,
+  <br />
+  Northwood Mortgage Administrator
+</p>

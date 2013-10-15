@@ -1,0 +1,24 @@
+%h1 Newsletters
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+    .add_new_record
+      = link_to '+ Add New Newsletter', new_newsletter_path      
+    %table.list_table{:cellpadding => 0, :cellspacing => 0}
+      %tr
+        %th Newsletters
+        %th Subscriptions
+        %th Issues
+        %th{:colspan=>3}
+                        
+      - @newsletters.each do |newsletter|
+        %tr{:valign=>"top", :class=>"#{cycle('odd', 'even')}"}
+          %td= link_to newsletter.name, newsletter_issues_path(newsletter)
+          %td= newsletter.subscriptions.size
+          %td= newsletter.issues.size
+          / Rate watch newsletter cannot be edited or deleted
+          -if newsletter.id != 1
+            %td= link_to 'Edit', edit_newsletter_path(newsletter)
+            %td= link_to 'Delete', newsletter_path(newsletter), :confirm => 'All the issues of this newsletter will also be deleted, as well as any existing user subscriptions! Are you sure? ', :method => :delete

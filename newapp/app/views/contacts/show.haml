@@ -1,0 +1,65 @@
+= render :partial=> 'layouts/user_navigation', :locals => { :section => "Contacts" }
+
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    %h2 CONTACT DETAILS
+    .left_column
+      %h3 Contact information
+  
+      %dl.form_list
+        %dt Name:
+        %dd= value_or_space @contact.first_name + " " + @contact.last_name
+        
+        %dt Address:
+        %dd= value_or_space @contact.address
+        
+        %dt Home Phone:
+        %dd= value_or_space @contact.phone
+        
+        %dt Mobile Phone:
+        %dd= value_or_space @contact.mobile
+        
+        %dt Fax:
+        %dd= value_or_space @contact.fax
+        
+        %dt Email:
+        %dd= value_or_space @contact.email
+        
+        %dt Other notes:
+        %dd= value_or_space nl2br(@contact.notes)
+        
+
+    .right_column
+      %h3 Newsletter Subscriptions
+        
+      -for @newsletter in Newsletter.find(:all)
+        -@newsletter.prepare(@contact.id)
+        -if @newsletter.has_subscription_from
+          %p.check_box_on
+            %b=@newsletter.name
+        -else
+          %p.check_box_off
+            %b=@newsletter.name
+
+
+    .clearfloat
+    
+    .button
+      = link_to "Delete this contact", contact_path(params[:user_id], @contact), :confirm => 'Are you sure?', :method => :delete
+    .button
+      = link_to 'Edit', edit_contact_path(params[:user_id], @contact)
+    .clearfloat
+    
+    
+    
+    
+    %h3 Reminders
+    %br/
+    
+    = render :partial => 'reminders/new'
+    
+    #reminders
+      = render :partial=>'reminders/reminder', :collection => @contact.reminders

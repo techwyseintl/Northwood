@@ -1,0 +1,24 @@
+.dgreen_box
+  .dgreen_header
+    %div
+  .dgreen_content{:style => "padding: 0px 20px"}
+    
+    = error_messages_for :shared_file
+    - form_for :shared_file, @shared_file, :url => policies_procedures_files_path, :html => {:multipart => true, :id=>'file_upload_form'} do |f|
+      %dl.form_list
+        %dt
+          %label{:for=>"rate_rate"} File:
+        %dd.user_form
+          = f.file_field :uploaded_data
+        %dt
+          %label{:for=>"rate_rate"} Description:
+        %dd.user_form
+          = f.text_area :description, :rows=>2 
+
+      = submit_tag "Create", :class => 'dont_display'    
+      .button{:style=>'float:right'}
+        = link_to 'Upload File', '#', :onclick => "$('file_upload_form').submit(); return false;", :title=>"After selecting a file, click here to upload it to the system."
+      
+      .clearfloat
+  .dgreen_footer
+    %div

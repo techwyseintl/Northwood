@@ -1,0 +1,35 @@
+reminder1:
+  id: 1
+  contact_id: 1
+  remind_on: <%= 1.day.from_now.to_s :db %>
+  message: Fax documentation
+
+reminder2:
+  id: 2
+  contact_id: 1
+  remind_on: <%= 2.day.from_now.to_s :db %>
+  message: Follow up 
+  
+reminder3:
+  id: 3
+  contact_id: 1
+  remind_on: <%= 3.day.from_now.to_s :db %>
+  message: Send flowers
+  
+reminder4:
+  id: 4
+  contact_id: 1
+  remind_on: <%= 3.day.from_now.to_s :db %>
+  message: Book conference room
+
+reminder5:
+  id: 5
+  contact_id: 2
+  remind_on: <%= 1.day.from_now.to_s :db %>
+  message: Eat five large cheeses
+
+reminder6:
+  id: 6
+  contact_id: 2
+  remind_on: <%= 2.day.from_now.to_s :db %>
+  message: Stand on my head for 5 minuts    

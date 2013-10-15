@@ -1,0 +1,30 @@
+=javascript_include_tag 'land_transfer_tax'
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+    - form_tag '', :name => 'calc', :id=> 'ltt_form', :class=>'payment_calculator' do
+      %dl.form_list
+        %dt
+          %label Purchase Price in $:
+        %dd
+          = text_field_tag 'Price', '', :size => 17
+        
+        %dt
+          %label Land Transfer Tax $:
+        %dd
+          = text_field_tag 'LTT', '', :size => 17
+    
+
+    %p Valid for Ontario residents only.
+    %p 
+      Toronto residents please note that Toronto City Council approved a new land transfer tax which takes effect on February 1, 2008. 
+      %br/
+      Click 
+      = link_to 'here', '/pdfs/cchonline.pdf' 
+      for information
+    .button
+      = link_to 'Click To Calculate', '#', :onclick => "CalcLTT($('ltt_form'), $('ltt_form').Price.value); return false;"
+    .clearfloat      
+          

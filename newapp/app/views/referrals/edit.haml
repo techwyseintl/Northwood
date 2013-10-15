@@ -1,0 +1,17 @@
+%h1 Editing Referral Page
+
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    = error_messages_for :referral
+    - form_for :rate, @referral, :url => referral_path(@referral), :html => {:method => "put", :id => "referral_edit_form"} do
+      = render :partial => 'form'
+      = submit_tag 'Edit', :class => 'dont_display'
+
+    .button
+      = link_to 'Cancel', referrals_path
+    .button
+      = link_to 'Save', '#', :onclick => "$('referral_edit_form').submit(); return false;"
+    .clearfloat

@@ -1,0 +1,368 @@
+html, body, h1, h2, h3, h5, h6, form, input, select, p, ul, ol, dl, li, dt, dd {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  background: url(/images/body_bg.gif) repeat-x;
+  font: 12px Arial, Verdana, sans-serif; }
+
+a {
+  color: #29531c; }
+
+a:hover {
+  color: #000; }
+
+p, ul, ol, dl {
+  margin-bottom: 15px; }
+
+dd {
+  margin-bottom: 5px; }
+
+#main {
+  width: 790px;
+  background: url(/images/main_bg.gif) repeat-y center;
+  margin: auto;
+  position: relative; }
+
+#top_login_link {
+  position: absolute;
+  right: 35px;
+  top: 10px;
+  z-index: 100; }
+
+#header {
+  background: url(/images/header_bg.jpg) no-repeat;
+  width: 790px; }
+  #header a {
+    display: block;
+    position: absolute;
+    height: 85px;
+    width: 250px;
+    left: 25px;
+    top: 1px; }
+    #header a span {
+      display: none; }
+  #header #header_image {
+    background: url(/images/headers/large/header1.jpg);
+    height: 371px;
+    width: 748px;
+    margin: auto; }
+
+#content {
+  width: 748px;
+  margin: auto; }
+  #content #left_column {
+    float: left;
+    width: 203px;
+    padding-left: 20px; }
+    #content #left_column a.northwood_link {
+      background: transparent url(/images/nav_bullet.gif) left no-repeat;
+      display: block;
+      line-height: 25px;
+      height: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #29531c;
+      padding-left: 20px; }
+    #content #left_column a.northwood_link:hover {
+      text-decoration: underline; }
+    #content #left_column #left_nav {
+      margin-top: -135px;
+      margin-bottom: 15px;
+      overflow: visible;
+      list-style: none;
+      width: 177px;
+      position: relative; }
+      #content #left_column #left_nav li {
+        background: transparent url(/images/nav_bottom_border.gif) bottom repeat-x; }
+        #content #left_column #left_nav li a, #content #left_column #left_nav li span.phone {
+          background: transparent url(/images/nav_bullet.gif) left no-repeat;
+          display: block;
+          line-height: 25px;
+          height: 25px;
+          font-weight: bold;
+          text-decoration: none;
+          color: #29531c;
+          padding-left: 20px; }
+        #content #left_column #left_nav li a:hover {
+          text-decoration: underline; }
+    #content #left_column #left_nav.small_header {
+      margin-top: 0px; }
+  #content #main_column {
+    width: 496px;
+    float: right;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    display: inline; }
+    #content #main_column h1 {
+      font: normal 19px Trebuchet MS, sans-serif;
+      color: #ff9914;
+      margin-bottom: 15px; }
+    #content #main_column .header_links {
+      margin-top: -5px;
+      margin-bottom: 20px;
+      font-size: 110%; }
+      #content #main_column .header_links a {
+        text-decoration: none; }
+      #content #main_column .header_links a.active {
+        font-weight: bold; }
+    #content #main_column h2 {
+      font: bold 14px Arial, sans-serif;
+      color: #29531c;
+      margin-bottom: 15px; }
+    #content #main_column h3 {
+      font: bold 12px Arial, sans-serif; }
+    #content #main_column ul, #content #main_column ol {
+      margin-left: 30px; }
+    #content #main_column .lgreen_box {
+      zoom: 1;
+      background: #e7ece7 url(/images/lgreen_box_bg.gif) repeat-x bottom;
+      margin-bottom: 15px;
+      color: #29531c; }
+      #content #main_column .lgreen_box .lgreen_header {
+        background: transparent url(/images/lgreen_box_header.gif) right no-repeat;
+        font-size: 0px; }
+        #content #main_column .lgreen_box .lgreen_header div {
+          width: 5px;
+          height: 5px;
+          background: transparent url(/images/lgreen_box_header_corner.gif); }
+      #content #main_column .lgreen_box .lgreen_content {
+        padding: 15px 20px;
+        _height: 0px;
+        position: relative; }
+    #content #main_column .dgreen_box {
+      background: #cfdacf;
+      margin-bottom: 15px; }
+      #content #main_column .dgreen_box .dgreen_header {
+        background: transparent url(/images/dgreen_box_header.gif) right;
+        font-size: 0px; }
+        #content #main_column .dgreen_box .dgreen_header div {
+          width: 5px;
+          height: 5px;
+          background: transparent url(/images/dgreen_box_header_corner.gif); }
+      #content #main_column .dgreen_box .dgreen_content {
+        padding: 5px 0px 0px 0px;
+        _height: 0; }
+      #content #main_column .dgreen_box .dgreen_footer {
+        background: transparent url(/images/dgreen_box_footer.gif) right;
+        font-size: 0px; }
+        #content #main_column .dgreen_box .dgreen_footer div {
+          width: 5px;
+          height: 5px;
+          background: transparent url(/images/dgreen_box_footer_corner.gif); }
+
+.button {
+  background: transparent url(/images/button_bg_right.gif) right;
+  float: right;
+  position: relative;
+  margin-left: 5px; }
+  .button a {
+    background: transparent url(/images/button_bg_left.gif) no-repeat;
+    height: 22px;
+    padding: 0px 10px;
+    font: 14px/22px Trebuchet MS, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    float: left; }
+  .button a:hover {
+    color: #ffffff; }
+
+a.csv_export {
+  float: right; }
+
+.add_new_record, .transfer_contacts {
+  margin-bottom: 15px; }
+  .add_new_record a, .transfer_contacts a {
+    font-weight: bold; }
+
+.pagination_links {
+  text-align: center;
+  margin-bottom: 15px; }
+
+table.list_table {
+  width: 100%;
+  margin-bottom: 15px; }
+  table.list_table th {
+    text-align: left;
+    border-bottom: 1px solid #849f84;
+    padding: 5px; }
+  table.list_table td {
+    padding: 5px; }
+  table.list_table tr.even {
+    background-color: #c7d3c7; }
+
+dl.form_list {
+  margin-bottom: 10px; }
+  dl.form_list dt {
+    float: left;
+    margin-bottom: 5px;
+    clear: both;
+    width: 80px;
+    padding-right: 10px;
+    text-align: right; }
+  dl.form_list dd {
+    margin-left: 90px;
+    margin-bottom: 5px; }
+    dl.form_list dd input, dl.form_list dd textarea {
+      width: 350px; }
+    dl.form_list dd.user_form input, dl.form_list dd.user_form textarea, dl.form_list dd.user_form select {
+      width: 170px; }
+    dl.form_list dd.contact_form input, dl.form_list dd.contact_form textarea, dl.form_list dd.contact_form select {
+      width: 170px; }
+
+dl.pre_approval {
+  margin-bottom: 10px; }
+  dl.pre_approval dt {
+    float: left;
+    margin-bottom: 5px;
+    clear: both;
+    width: 150px;
+    padding-right: 10px;
+    text-align: right; }
+  dl.pre_approval dd {
+    margin-left: 90px;
+    margin-bottom: 5px; }
+    dl.pre_approval dd input, dl.pre_approval dd textarea, dl.pre_approval dd select {
+      width: 170px; }
+
+.left_column {
+  float: left;
+  width: 300px; }
+  .left_column h3 {
+    font: bold 12px Arial, sans-serif;
+    color: #29531c;
+    margin-bottom: 15px; }
+
+.right_column {
+  float: right;
+  width: 160px; }
+  .right_column h3 {
+    font: bold 12px Arial, sans-serif;
+    color: #29531c;
+    margin-bottom: 10px; }
+    .right_column dl.form_list dt {
+      width: 0;
+      padding-right: 0px; }
+    .right_column dl.form_list dd {
+      margin-left: 0; }
+      .right_column dl.form_list dd input {
+        width: auto;
+        margin-right: 5px; }
+  .right_column p.check_box_on {
+    padding-left: 20px;
+    background: transparent url(/images/check_box_on.gif) no-repeat; }
+  .right_column p.check_box_off {
+    padding-left: 20px;
+    background: transparent url(/images/check_box_off.gif) no-repeat; }
+
+      #new_reminder dl.form_list dd input, #new_reminder dl.form_list dd select, #edit_reminder dl.form_list dd input, #edit_reminder dl.form_list dd select, .dgreen_content dl.form_list dd input, .dgreen_content dl.form_list dd select, .reminder_edit dl.form_list dd input, .reminder_edit dl.form_list dd select {
+        width: auto; }
+      #new_reminder dl.form_list dd textarea, #edit_reminder dl.form_list dd textarea, .dgreen_content dl.form_list dd textarea, .reminder_edit dl.form_list dd textarea {
+        width: 330px; }
+
+#new_reminder, .reminder_edit {
+  background-color: #faecd7;
+  padding: 10px 20px 10px 0px;
+  margin-bottom: 5px;
+  _height: 0%;
+  zoom: 1; }
+
+.reminder_message {
+  background: #d2ddd2;
+  margin-bottom: 5px;
+  padding: 5px;
+  _height: 0%;
+  zoom: 1; }
+
+.reminder_links {
+  float: right;
+  width: 80px; }
+
+#user_photo_box {
+  background-color: #CFDACF;
+  position: absolute;
+  right: 20px;
+  border: 1px solid #29531c;
+  padding: 3px; }
+  #user_photo_box img {
+    border: 2px solid #eee; }
+
+#footer {
+  font: 10px Trebuchet MS, sans-serif;
+  background: url(/images/footer_bg.gif) no-repeat bottom; }
+  #footer .content {
+    width: 748px;
+    margin: auto; }
+    #footer .content .address {
+      font-size: 11px;
+      text-align: center;
+      padding: 10px 0px; }
+    #footer .content .copyright {
+      text-align: center;
+      padding: 10px 30px; }
+    #footer .content .logos {
+      padding: 5px 0px;
+      text-align: center; }
+      #footer .content .logos h2 {
+        font-size: 14px;
+        margin: 5px; }
+        #footer .content .logos a img {
+          border: 0; }
+    #footer .content .disclaimer {
+      padding: 10px 30px; }
+
+.hr {
+  height: 1px;
+  font-size: 0px;
+  background: url(/images/hr.jpg); }
+
+.clearfloat {
+  clear: both;
+  height: 0px;
+  font-size: 0px; }
+
+#content #main_column .dont_display {
+  width: 0;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+  line-height: 0;
+  visibility: hidden;
+  _visibility: visible; }
+
+
+.flash_error, .flash_notice {
+  width: 500px;
+  height: 50px;
+  padding-top: 20px;
+  margin-bottom: 15px; }
+  .flash_error p, .flash_notice p {
+    margin: 0px 25px;
+    text-align: center; }
+
+.flash_error {
+  background: transparent url(/images/flash_error.jpg);
+  color: #883116; }
+
+.flash_notice {
+  background: transparent url(/images/flash_notice_header.gif);
+  color: #ff9914;
+  height: auto; }
+  .flash_notice p {
+    padding-bottom: 10px; }
+  .flash_notice .footer {
+    background: transparent url(/images/flash_notice_footer.gif);
+    height: 10px;
+    font-size: 0; }
+
+#errorExplanation {
+  background: #f79679 url(/images/form_error_top.gif) no-repeat;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  color: #883116; }
+  #errorExplanation ul {
+    margin-left: 15px; }
+
+.inactive_agent {
+  color: red; }

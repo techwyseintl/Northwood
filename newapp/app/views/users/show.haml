@@ -1,0 +1,70 @@
+= render :partial=> 'layouts/user_navigation', :locals => { :section => "Details" }
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    - if @user.photo
+      #user_photo_box
+        = image_tag url_for_file_column('user', 'photo') unless @user.photo == nil
+    %dl.form_list      
+      %dt Agent Name:
+      %dd.user_form= @user.first_name + " " + @user.last_name
+      
+      %dt Address:
+      %dd.user_form= value_or_space nl2br(@user.address)
+      
+      %dt Direct Phone:
+      %dd.user_form= value_or_space @user.phone
+      
+      %dt Mobile Phone:
+      %dd.user_form= value_or_space @user.mobile
+      
+      %dt Fax:
+      %dd.user_form= value_or_space @user.fax
+      
+      %dt Email:
+      %dd.user_form= value_or_space mail_to(@user.email, @user.email, :encode => 'hex')
+      
+      %dt Job Title:
+      %dd.user_form= value_or_space @user.job_title
+      
+      %dt Webpage:
+      %dd.user_form= value_or_space(link_to SITE_URL + '/' + @user.webpage_address, '/' + @user.webpage_address)
+
+          
+    .clearfloat
+    
+    -if @current_user.is_admin?
+      .dgreen_box
+        .dgreen_header
+          %div
+        .dgreen_content
+          %dl.form_list
+          
+            %dt User Role:
+            %dd= @user.named_user_role
+          
+            %dt Started on:
+            %dd= @user.started_on
+          
+            %dt User Active:
+            %dd= @user.is_active == 1 ? "Yes" : '<div class="inactive_agent">No</div>'
+            
+          .clearfloat
+        
+        .dgreen_footer
+          %div
+    - if @current_user.is_admin?
+      .button
+        = link_to 'Delete', user_path(@user), :method=>:delete, :confirm=>"You are about to delete #{@user.full_name}.\nWARNING: If you wish to transfer contacts from this agent to another agent, you should do this before deleting this agent.\nAre you sure you want to delete this agent?"
+      .button
+        = link_to 'Send Welcome Email', welcome_user_path
+      .button
+        = link_to 'Edit', edit_user_path(@user)
+    - else
+      %br/
+      .button
+        = link_to 'Edit', edit_user_path(@user)
+
+    .clearfloat

@@ -1,0 +1,23 @@
+%h1 Applicant Details
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    %h2 Applicant Information
+    %dl.form_list
+      %dt Name:
+      %dd{:style=>'width:200px'}= @job_candidate.full_name
+      %dt E-Mail
+      %dd{:style=>'width:200px'}=@job_candidate.email
+      %dt Phone
+      %dd{:style=>'width:200px'}=@job_candidate.phone
+
+    %br
+    %h2 Career Reports
+    %ul
+      -@job_candidate.career_reports.each do |report|
+        %li=report.name     
+
+    .button
+      = link_to 'Back to Career Applicants', job_candidates_path

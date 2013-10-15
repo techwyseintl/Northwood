@@ -1,0 +1,19 @@
+<p>
+  Dear <%=@user.full_name%>
+</p>
+<p>
+  This message was sent to you via Northwood messaging system.
+</p>
+<p>
+  There was a mortgage renewal request from:
+</p>
+<ul>
+  <li>Name: <%= @name %></li>
+  <li>Email: <%= @email %></li>
+  <li>Mortage Maturity Date: <%= @maturity_date %></li>
+</ul>
+<p>
+  Sincerely,
+  <br />
+  Northwood Mortgage Administrator
+</p>

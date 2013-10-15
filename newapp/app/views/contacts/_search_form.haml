@@ -1,0 +1,25 @@
+.dgreen_box
+  .dgreen_header
+    %div
+  .dgreen_content{:style => "padding: 0px 20px"}
+    = link_to 'All Contacts', :controller => 'contacts', :action => 'all'
+    |
+    = link_to 'Company Contacts', unassigned_contacts_path
+    | 
+    By Agent:
+    - user_id = @user ? @user.id : nil
+    = select_tag 'agent_id', options_for_select([''] + User.find(:all, :order => :first_name).collect {|u| [ u.full_name, u.id ]}, user_id), :onchange=>"if($('agent_id').value!='') window.location='/admin/users/'+$('agent_id').value+'/contacts'", :style=>'width:150px'
+    
+    
+    - form_tag '', :method => 'get', :style => 'margin-top: 10px' do
+      .button{:style => 'float: right'}
+        = link_to 'Search', '#', :onclick => "$('agent_search_form').click(); return false;"
+      %label{:for=>"first_name"} Name/Email:
+      = text_field_tag 'search_string', params[:search_string], :style => "width: 250px"
+      = submit_tag 'Search', :id => "agent_search_form", :class => 'dont_display'
+      
+      
+      .clearfloat
+
+  .dgreen_footer
+    %div

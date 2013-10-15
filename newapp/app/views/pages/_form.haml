@@ -1,0 +1,12 @@
+%dl.form_list
+  %dt
+    %label{:for=>"page_name"} Title
+  %dd
+    = text_field 'page', 'name' if  page.new_record?
+    = page.name                 if !page.new_record?
+    
+  %dt
+    %label{:for=>"page_text"} Text
+  %dd
+    ~ textile_editor 'page', 'text', 'cols' => 49, 'rows' => 40, :style=>'width:360px'
+    = textile_editor_initialize

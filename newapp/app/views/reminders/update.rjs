@@ -1,0 +1,5 @@
+page.hide "reminder_edit_icon_#{@reminder.id}"
+page.replace_html "reminder_show_#{@reminder.id}", :partial => 'reminders/show', :locals => {:reminder => @reminder}
+page.visual_effect :BlindUp, "reminder_edit_#{@reminder.id}", :duration => 0.2
+page.visual_effect :BlindDown, "reminder_show_#{@reminder.id}", :duration => 0.2
+page.visual_effect :Highlight, "reminder_show_#{@reminder.id}" 

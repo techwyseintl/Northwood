@@ -1,0 +1,21 @@
+first_candidate:
+  id: 1
+  first_name: Joe
+  last_name: Hopeful
+  email: joe_hopeful@workingdata.net
+  created_at: <%= (Time.now - 10.days).to_s :db%>
+second_candidate:
+  id: 2
+  first_name: Amanda
+  last_name: Wastemytime
+  email: amanda_wastemytime@workingdata.net
+  created_at: <%= (Time.now - 5.days).to_s :db %>
+  
+<% 3.upto(25) do |id| %>
+job_candidate<%= id %>:
+  id: <%= id %>
+  first_name: Candidate
+  last_name: Numero <%= id%>
+  email: candidante<%=id%>@workingdata.net
+  created_at: <%= (Time.now - id.days).to_s :db %>
+<% end %>

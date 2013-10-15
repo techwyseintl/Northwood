@@ -1,0 +1,18 @@
+- if params[:path] and (params[:path].empty? or (@user and params[:path].size == 1 and params[:path][0] == @user.webpage_address))
+  = render :partial => 'contacts/contact_request'
+- if params[:path] and params[:path].empty?
+  = mail_to 'info@northwoodmortgage.com', '<span>info@northwoodmortgage.com</span>', :encode => 'hex', :class => 'contact_us'
+
+- elsif params[:controller] and params[:path] and params[:path][0] == 'northwood-mortgage-life'
+  = render :partial => 'contacts/mortgage_life_contact_request'
+  
+- elsif @public_area and !@agent_area
+  - if request_from_reversemortgageplan?
+    = render :partial => 'contacts/reverse_mortgage_contact_request'
+    = link_to 'Nothwoodmortgage.com', SITE_URL, :class => 'northwood_link'
+    
+  - else
+    = link_to '<span>Apply Now</span>', pre_approval_application_path, :class => 'apply_now'
+    = link_to '<span>Northwood Mortgage Life</span>', '/northwood-mortgage-life', :class => 'nm_life'
+- elsif @agent_area
+  = link_to '<span>Apply Now</span>', agent_pre_approval_application_path(@user.webpage_address), :class => 'apply_now'

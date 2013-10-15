@@ -1,0 +1,104 @@
+- if @user.photo
+  #user_photo_box   
+    = image_tag url_for_file_column('user', 'photo') unless @user.photo == nil    
+      
+%dl.form_list
+  %dt
+    %label{:for =>"user_first_name"} First Name:
+  %dd.user_form
+    = text_field 'user', 'first_name', :onblur=>"$('user_webpage_address').value = generate_webpage_address(this.value, $('user_last_name').value)"
+  %dt
+    %label{:for =>"user_last_name"} Last Name:
+  %dd.user_form
+    = text_field 'user', 'last_name', :onblur=>"$('user_webpage_address').value = generate_webpage_address($('user_first_name').value, this.value)"
+  
+    
+  %dt
+    %label{:for =>"user_phone"} Direct Phone:
+  %dd.user_form
+    = text_field 'user', 'phone'
+
+  %dt
+    %label{:for =>"user_mobile"} Mobile Phone:
+  %dd.user_form
+    = text_field 'user', 'mobile'
+
+  %dt
+    %label{:for =>"user_fax"} Fax:
+  %dd.user_form
+    = text_field 'user', 'fax'
+  
+  %dt
+    %label{:for =>"user_email"} Email:
+  %dd.user_form
+    = text_field 'user', 'email'
+   
+  %dt
+    %label{:for => 'user_photo'} Photo:
+  %dd
+    = file_column_field('user', 'photo', {:size=>25, :style=>"width: 255px; height: 20px"})
+  
+  
+  %dt  
+    %label{:for =>"user_user"} Password:
+  %dd.user_form
+    = password_field 'user', 'password'
+
+  %dt
+    %label{:for =>"user_user"} Confirmation:
+  %dd.user_form
+    = password_field 'user', 'password_confirmation'     
+.clearfloat
+
+- if @current_user.is_admin?
+  .dgreen_box{:style=>'margin-bottom:5px; margin-top:5px'}
+    .dgreen_header
+      %div
+    .dgreen_content
+      %dl.form_list
+        %dt
+          %label{:for =>"user_role"} User Role:
+        %dd.user_form
+          = select 'user', 'role', User.named_user_roles.invert.sort, :style=>'width:170px'
+        %dt
+          %label{:for =>"user_job_title"} Job Title:
+        %dd.user_form
+          = text_field 'user', 'job_title', :style=>'width:170px'
+          
+        %dt
+          %label{:for =>"user_address"} Address:
+        %dd.user_form
+          ~ text_area 'user', 'address', 'cols' => 29, 'rows' => 2, :style => 'width: 170px'
+          
+        %dt
+          %label{:for =>"user_webpage_address"} Webpage:
+        %dd
+          = SITE_URL + '/'
+          = text_field 'user', 'webpage_address', :style=>"width: 100px"
+          
+        %dt
+          %label{:for =>"user_started_on"} Started on:
+        %dd
+          = date_select 'user', 'started_on'
+      
+      %dl
+        %dt 
+        %dd
+          = check_box 'user', 'is_active'
+          %label{:for =>"user_is_active"} Active
+
+
+          
+      .clearfloat
+    
+    .dgreen_footer
+      %div
+
+%div{:style=>'margin: 20px 0;'}
+  %label{:for =>"user_webpage_text"} Content for Agent's Home Page:
+  ~ textile_editor 'user', 'webpage_text', 'cols' => 100, 'rows' => 40, :style=>"width: 453px"
+  = textile_editor_initialize
+
+
+    
+.clearfloat

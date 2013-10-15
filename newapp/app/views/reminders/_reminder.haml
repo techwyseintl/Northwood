@@ -1,0 +1,21 @@
+%div[reminder]
+
+  .reminder_message{:id=>"reminder_show_#{reminder.id}"}
+    = render :partial => 'reminders/show', :local => {:reminder => reminder}
+
+
+  .edit{:id => "reminder_edit_#{reminder.id}", :style => 'display:none'}
+    .reminder_edit
+
+      -remote_form_for :reminder, reminder, :url => reminder_path(@user, @contact, reminder), :method=>'put', :before => "Element.show($('reminder_edit_icon_#{reminder.id}'))" do |f|
+        
+        = render :partial => 'reminders/form', :locals => {'form' => reminder, 'f'=> f}
+
+        = submit_tag 'Save', :id => "reminder_edit_form_#{reminder.id}", :class => 'dont_display'
+
+        = image_tag('updating.gif', :id => "reminder_edit_icon_#{reminder.id}", :style=>'display:none')
+
+        %div{:style => 'padding-left: 90px'}
+          = link_to 'Save', '#', :onclick => "$('reminder_edit_form_#{reminder.id}').click(); return false;"
+          = link_to_function('Cancel') {|page| page.hide("reminder_edit_#{reminder.id}"); page.show("reminder_show_#{reminder.id}")}
+

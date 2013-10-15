@@ -1,0 +1,28 @@
+<p>
+  Dear <%=@user.full_name%>
+</p>
+
+<p>
+  This message was sent to you via Northwood messaging system.
+</p>
+  
+<p>
+  Your account was set up and may login at <a href="<%= SITE_URL %>/login"><%= SITE_URL %>/login</a>
+  <br/>
+  with your email: <b><%=@user.email%></b>
+  <br/>
+  and password: <b><%=@password%></b>
+</p>
+
+<p>
+
+It's a computer generated password, so it might be hard to remember.
+Once you have logged in, you can go to the 'Edit your profile' page,
+where you can change it to something you'll remember more easily.
+</p>
+
+<p>
+Sincerely,
+<br/>
+Northwood Mortgage
+</p>

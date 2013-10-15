@@ -1,0 +1,33 @@
+%p Rate Watch will automatically keep you updated when changes to the current mortgage rates are posted. Simply complete this form and submit.
+
+.left_column
+  %dl.form_list   
+    %dt
+      %label{:for=>"contact_first_name"} First Name:
+    %dd.contact_form
+      = text_field 'contact', 'first_name'
+    
+    %dt
+      %label{:for=>"contact_last_name"} Last Name:
+    %dd.contact_form
+      = text_field 'contact', 'last_name'
+  
+    %dt
+      %label{:for=>"contact_email"} Email:
+    %dd.contact_form
+      = text_field 'contact', 'email'
+
+.right_column
+  %h3 Newsletter Subscriptions
+
+  %dl.form_list
+    -for @newsletter in Newsletter.find(:all)
+      %dt
+      %dd
+        -if !@contact.subscribes_to || (@contact.subscribes_to && @contact.subscribes_to[@newsletter.id.to_s]=='1')
+          =check_box :newsletter, "", :name=>"contact[subscribes_to][#{@newsletter.id}]", :checked=>'checked' 
+        -else
+          =check_box :newsletter, "", :name=>"contact[subscribes_to][#{@newsletter.id}]", :checked=>'unchecked' 
+        %b=@newsletter.name
+        
+.clearfloat

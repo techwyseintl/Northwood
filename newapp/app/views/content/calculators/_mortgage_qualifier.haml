@@ -1,0 +1,124 @@
+- @amortization_options = {'5 years'=>5, '10 years'=>10, '15 years'=>15, '20 years'=>20, '25 years'=>25, '30 years'=>30, '35 years'=>35}.sort{|k,v| k[1]<=>v[1]}
+- @percent_down_options = {'5%'=>5, '10%'=>10, '15%'=>15, '20%'=>20, '25%'=>25, '30%'=>30, '35%'=>35, '40%'=>40, '45%'=>45, '50%'=>50}.sort{|k,v| k[1]<=>v[1]}
+
+=javascript_include_tag 'basic'
+=javascript_include_tag 'locale'
+=javascript_include_tag 'calc_dataentry'
+=javascript_include_tag 'calc_qualif2'
+=javascript_include_tag 'mortgage_qualifier'
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+    - form_tag '', :name => 'qualForm', :id=> 'qualForm', :class=>'mortgage_qualifier', :onsubmit=>"return false;" do
+      =hidden_field '', '', :name=>'cmd'
+      =hidden_field '', '', :name=>'key'
+      =hidden_field '', '', :name=>'txtGDS', :value=>'44'
+
+      %dl.form_list{:style=>'float:right'}
+        %dt
+          %label Heating: $
+        %dd
+          = text_field_tag 'txtHeating', '', :maxLength=>12, :value=> '900', :onchange=>"validateNum(this,0,300,99999,true); doCalc();"
+          ="/ year"
+        %dt
+          %label Taxes: $ 
+        %dd
+          = text_field_tag 'txtTax', '', :maxLength=>12, :onchange=>"validateNum(this,0,300,99999,true); doCalc();"
+          ="/ year"
+          
+        %dt{:style => 'width:220px;font-size:85%;'} 
+          (We suggest using 1% of Asking Price)
+        %dd 
+          &nbsp;
+        
+        %dt
+          %label Condo Fees: $
+        %dd
+          = text_field_tag 'txtOther', '', :maxLength=>12, :onchange=>"validateNum(this,0,0,99999,true); doCalc();"
+          ="/ year"
+          
+      %dl.form_list
+        %dt
+          %label Asking Price: $
+        %dd= text_field_tag 'txtPrice', '', :maxLength=>12, :onchange=>"validateNum(this,0,1000,9999999,true); doCalc();"       
+        %dt
+          %label Interest Rate:
+        %dd= text_field_tag 'txtRate', '', :maxLength=>12, :value => Rate.default_calculator_rate ? Rate.default_calculator_rate.rate.to_f : '', :onchange=>"validateNum(this,3,1,100); doCalc();"
+        %dt
+          %label Amortization:
+        %dd
+          = select '', '', @amortization_options.sort{|v,k| v[1]<=>k[1]}, {:selected => 35}, {:id=>'amortization', :name=>'cboAmortization', :onchange=>'doCalc()'}
+      .clearfloat      
+
+      .button
+        = link_to 'Calculate', '#', :onclick => "doCalc();return false;"
+      .clearfloat      
+  
+      .dgreen_box{:style=>'margin-bottom:5px; margin-top:5px'}
+        .dgreen_header
+          %div
+        .dgreen_content
+            
+          %table{:cellpadding => 0, :cellspacing => 0}
+            %tr
+              %td{:style=>'border-bottom: 1px solid #849f84'} Percent Down:
+              %th
+                = select '', '', @percent_down_options.sort{|v,k| v[1]<=>k[1]}, {:selected => 5}, {:name=>'cboPercentDown1', :onchange=>'doCalc()', :id=>'percent_down_1'}
+              %th
+                = select '', '', @percent_down_options.sort{|v,k| v[1]<=>k[1]}, {:selected => 10}, {:name=>'cboPercentDown2', :onchange=>'doCalc()', :id=>'percent_down_2'}
+              %th
+                = select '', '', @percent_down_options.sort{|v,k| v[1]<=>k[1]}, {:selected => 20}, {:name=>'cboPercentDown3', :onchange=>'doCalc()', :id=>'percent_down_3'}
+            %tr
+              %td Down Payment:    
+              %td= '$'+text_field_tag('txtDownPayment1', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();")  
+              %td= '$'+text_field_tag('txtDownPayment2', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtDownPayment3', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+            %tr
+              %td First Mortgage:    
+              %td= '$'+text_field_tag('txtFirstMortgage1', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtFirstMortgage2', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtFirstMortgage3', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+            %tr
+              %td CMHC/GE Prem. :  
+              %td= '$'+text_field_tag('txtCMHC1', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtCMHC2', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtCMHC3', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+            %tr
+              %td Total Financing: 
+              %td= '$'+text_field_tag('txtFinancing1', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtFinancing2', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtFinancing3', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+            %tr
+              %td (Monthly) P&amp;I:
+              %td= '$'+text_field_tag('txtPI1', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtPI2', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtPI3', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+            %tr
+              %td 
+                Heating & Taxes 
+                %br (monthly):
+              %td= '$'+text_field_tag('txtExpenses1', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtExpenses2', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtExpenses3', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+            %tr
+              %td Total Expenses:
+              %td= '$'+text_field_tag('txtTotal1', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtTotal2', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtTotal3', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+            %tr
+              %td Income Req.:
+              %td= '$'+text_field_tag('txtIncome1', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtIncome2', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+              %td= '$'+text_field_tag('txtIncome3', '', :maxLength=>12, :onfocus=>"this.blur(); document.qualForm.txtPrice.focus();" )
+          
+    
+          .clearfloat
+        
+        .dgreen_footer
+          %div
+        
+
+    %p Income may not be necessary to qualify. Please call us for a personal consultation.
+

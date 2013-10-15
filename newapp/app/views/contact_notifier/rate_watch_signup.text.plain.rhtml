@@ -1,0 +1,11 @@
+Dear <%=@contact.full_name%>
+
+Thank you for subscribing to:
+
+<% @contact.newsletters.each do |newsletter| %>
+  <%= newsletter.name %>
+<% end %>
+
+
+Sincerely,
+Northwood Mortgage

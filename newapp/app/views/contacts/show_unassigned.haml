@@ -1,0 +1,59 @@
+= render :partial=> 'layouts/user_navigation', :locals => { :section => "Contacts" }
+
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    %h2 CONTACT DETAILS
+    .left_column
+      %h3 Contact information
+  
+      %dl.form_list
+        %dt Name:
+        %dd= @contact.first_name + " " + @contact.last_name
+        
+        %dt Address:
+        %dd= @contact.address
+        
+        %dt Home Phone:
+        %dd= @contact.phone
+        
+        %dt Mobile Phone:
+        %dd= @contact.mobile
+        
+        %dt Fax:
+        %dd= @contact.fax
+        
+        %dt Email:
+        %dd= @contact.email
+        
+        %dt Other notes:
+        %dd= nl2br(@contact.notes)
+        
+
+    .right_column
+      %h3 Newsletter Subscriptions
+        
+      -for @newsletter in Newsletter.find(:all)
+        -@newsletter.prepare(@contact.id)
+        -if @newsletter.has_subscription_from
+          %p.check_box_on
+            %b=@newsletter.name
+        -else
+          %p.check_box_off
+            %b=@newsletter.name
+
+
+    .clearfloat
+    
+    
+    .button
+      = link_to 'View Unassigned Contacts', unassigned_contacts_path
+    .button
+      = link_to "Delete This Contact", unassigned_contact_path(params[:id]), :confirm => 'Are you sure?', :method => :delete
+    .button
+      = link_to 'Edit', edit_unassigned_contact_path(params[:id])
+    .clearfloat
+
+    

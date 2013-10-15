@@ -1,0 +1,23 @@
+<p>
+  Dear <%=@user.full_name%>
+</p>
+<p>
+  This message was sent to you via Northwood messaging system.
+</p>
+<p>
+  A new Pre-Application form has been submitted:
+</p>
+<ul>
+  <li><b>Name:</b> <%= @contact.full_name %></li>
+  <li><b>Address:</b> <%= nl2br @contact.address %></li>
+  <li><b>Phone:</b> <%= @contact.phone %></li>
+  <li><b>Mobile:</b> <%= @contact.mobile %></li>
+  <li><b>Fax:</b> <%= @contact.fax %></li>
+  <li><b>Email:</b> <%= @contact.email %></li>
+  <li><b>Note:</b> <%= nl2br @contact.notes %></li>
+</ul>
+<p>
+  Sincerely,
+  <br />
+  Northwood Mortgage Administrator
+</p>

@@ -1,0 +1,30 @@
+%h1 Referral Pages
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+  
+    - if @current_user and @current_user.is_admin?
+      .add_new_record= link_to '+ Add New Referral Page', new_referral_path
+      
+    - if @referrals.empty?
+      %p There are no referral pages yet.
+    - else
+      %table.list_table{:cellpadding => 0, :cellspacing => 0}
+        %tr
+          %th Name
+          %th Website
+          - if !@public_area
+            %th
+        - @referrals.each do |referral|
+          %tr{:valign=>"top", :class=>"#{cycle('odd', 'even')}"}
+            %td= referral.name
+            %td
+              - if !referral.webpage_address.blank?
+                = link_to 'View Website', '/referral/' + referral.webpage_address
+            -if !@public_area
+              %td{:style=>"width:100px"}
+                = link_to 'Edit', edit_referral_path(referral)
+                |
+                = link_to 'Remove', referral_path(referral), :confirm => 'Are you sure?', :method => :delete

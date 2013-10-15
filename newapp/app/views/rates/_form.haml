@@ -1,0 +1,15 @@
+%dl.form_list
+  %dt
+    %label{:for=>"rate_rate"} Rate
+  %dd.user_form
+    = text_field 'rate', 'rate'
+    
+  %dt
+    %label{:for=>"rate_term"} Term
+  %dd.user_form
+    = text_area 'rate', 'term', 'cols' => 29, 'rows' => 2
+
+  %dt 
+  %dd
+    = check_box :rate, 'is_default_calculator_rate', :style=>'width:20px'
+    %label{:for =>"user_is_active"} This is the default rate that the calculator will use

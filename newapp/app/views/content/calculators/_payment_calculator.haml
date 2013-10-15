@@ -1,0 +1,72 @@
+=javascript_include_tag 'payment_calculator'
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+    - form_tag '', :name => 'calc', :class=>'payment_calculator' do
+      %h2 Enter Your Information
+      %dl.form_list
+        %dt
+          %label Loan Amount:
+        %dd
+          = text_field_tag 'LA', '0', :onchange => 'dosum()', :size => 6
+        
+        %dt
+          %label Interest Rate:
+        %dd
+          = text_field_tag 'IR', '', :value => Rate.default_calculator_rate ? Rate.default_calculator_rate.rate.to_f : '', :onchange => 'dosum()', :size => 6
+    
+        %dt
+          %label Amortization:
+        %dd
+          = text_field_tag 'YR', '35', :onchange => 'dosum()', :size => 6
+    
+        %dt
+          %label Annual Taxes:
+        %dd
+          = text_field_tag 'AT', '0', :onchange => 'dosum()', :size => 6
+        
+        %dt
+          %label Monthly Condo Fees:
+        %dd
+          = text_field_tag 'AI', '0', :onchange => 'dosum()', :size => 6
+          
+        %dt
+          %label Monthly Heating Cost
+        %dd
+          = text_field_tag 'HEAT', '0', :onchange => 'dosum()', :size => 6
+      
+      
+      %h2 Monthly Mortgage Details:
+      %dl.form_list
+        %dt
+          %label Mortgage Payment (Principal &amp; Interest):
+        %dd
+          = text_field_tag 'PI', '0', :size => 10
+    
+        %dt
+          %label Property Tax:
+        %dd
+          = text_field_tag 'MT', '0', :size => 10
+              
+        %dt
+          %label Condo Heating Costs:
+        %dd
+          = text_field_tag 'MI', '0', :size => 10 
+               
+        %dt
+          %label Total Costs:
+        %dd
+          = text_field_tag 'MP', '0', :size => 10 
+                
+        %dt
+          %label Monthly Income Required: (Approximate):
+        %dd
+          = text_field_tag 'INRQ', '0', :size => 10 
+                       
+    .button
+      = link_to 'Click To Calculate', '#', :onclick => "dosum(); return false;"
+    .clearfloat      
+    %br/      
+    %p Income may not be necessary to qualify. Please call us for a personal consultation.

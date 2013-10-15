@@ -1,0 +1,49 @@
+%h1{:style=>"text-align: center; font-size: 25px"}= @referral.name
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    %h2{:style=>"margin-left: 90px"}
+      = "#{@referral.name} – Referral Representative At Northwood Mortgage Ltd."
+    
+    %dl.form_list
+
+      - unless @referral.phone.blank?      
+        %dt Direct Phone:
+        %dd{:style=>'width:200px'}= value_or_space @referral.phone
+      
+      - unless @referral.email.blank?      
+        %dt Email:
+        %dd=mail_to @referral.email, @referral.email, :encode => 'hex'
+
+  %div{:style=>"margin: 10px 50px 10px 111px"}      
+    = @referral.webpage_html
+  
+    %p Northwood Mortgage Ltd. is one of the GTA’s largest brokerage firms. We provide unmatched mortgage funding and investment services.
+    %p Whether you need a mortgage for your home or for a commercial property; whatever your personal circumstances may be, Northwood Mortgage can help.
+    %p Please fill out the following form and we’ll get back to you as soon as possible.
+    
+  .contact_page{:style=>'width:480px;margin:auto'}
+    %h1 Contact Us
+    = error_messages_for :contact
+    - form_for :contact, @contact, :url => contact_referral_path(@referral) do |f|
+      .left_column
+        %label First Name:
+        = text_field 'contact', 'first_name', :id => 'first_name', :maxlength => 40
+        %label Last Name:
+        = text_field 'contact', 'last_name', :id => 'last_name', :maxlength => 40
+        %label Phone:
+        = text_field 'contact', 'phone', :id => 'phone', :maxlength => 40
+        .contact_form_submit_button
+          = link_to "<span>Send Request</span>", "", :onclick => "$('nm_contact_form_submit').click(); return false;", :id => 'contact_form_submit_button'
+
+      .right_column
+        %label Email:
+        = text_field 'contact', 'email', :id => 'email', :maxlength => 40
+        %label Comments:
+        ~ text_area 'contact', 'notes', :id => 'comments', :rows => 5, :cols => 15
+        .note *All fields are mandatory
+        = submit_tag 'Submit Registration', :style=> 'display:none', :id=>"nm_contact_form_submit"
+      
+    .clearfloat

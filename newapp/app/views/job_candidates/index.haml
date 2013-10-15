@@ -1,0 +1,30 @@
+%h1 Career Applicants
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+    %table.list_table{:cellpadding => 0, :cellspacing => 0}
+      %tr
+        %th Name
+        %th Applied On
+        %th E-Mail
+        %th Phone Number
+        %th
+        
+      - @job_candidates.each do |job_candidate|
+        %tr{:valign=>"top", :class=>"#{cycle('odd', 'even')}"}
+          
+          %td= link_to job_candidate.full_name, job_candidate_path(job_candidate)
+          %td= job_candidate.created_at.to_s :long
+          %td= mail_to job_candidate.email, 'Send Email', :encode => 'hex'
+          %td= job_candidate.phone
+          %td= link_to 'Delete', job_candidate_path(job_candidate), :confirm => 'Are you sure?', :method => :delete
+
+
+    - if @job_candidate_pages.page_count > 1
+      .pagination_links
+        Go to page:
+        = link_to '&lt;', { :page => @job_candidate_pages.current.previous } if @job_candidate_pages.current.previous
+        = pagination_links @job_candidate_pages, :window_size => 5, :params => params
+        = link_to '&gt;', { :page => @job_candidate_pages.current.next } if @job_candidate_pages.current.next

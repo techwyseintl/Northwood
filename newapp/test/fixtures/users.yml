@@ -1,0 +1,195 @@
+oleg: &admin
+  id: 1
+  crypted_password: 19b64f581a3ffac78ca17a1f3ec7665943ec07d5
+  salt: e2ae26823f164436b1e1a8668ba9f9ee01218876 #passpass
+  first_name: Oleg 
+  last_name: Khabarov
+  address: 123 Fake St\r\nUnit 123\r\nToronto, On\r\nCanada
+  job_title: Morpheus
+  started_on: 2002-01-01 11:28:00
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: oleg@theworkinggroup.ca
+  webpage_text: my super duper webpage
+  webpage_address: olegk
+  is_active: 1
+  role: 1
+  remember_token:
+  remember_token_expires_at:
+  created_at: 2007-03-15 11:30:44
+  updated_at: 2007-03-15 11:30:44
+  
+jack:
+  id: 2
+  crypted_password: 19b64f581a3ffac78ca17a1f3ec7665943ec07d5
+  salt: e2ae26823f164436b1e1a8668ba9f9ee01218876 #passpass
+  first_name: Jack
+  last_name: Neto
+  address: 123 Fake St\r\nUnit 123\r\nToronto, On\r\nCanada
+  job_title: Link
+  started_on: <%= 1.year.ago.to_s :db %>
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: jack@theworkinggroup.ca
+  webpage_text: my super duper webpage
+  webpage_address: jackn
+  is_active: 1
+  role: 0
+  remember_token:
+  remember_token_expires_at:
+  created_at: <%= 1.year.ago.to_s :db %>
+  updated_at: <%= 2.months.ago.to_s :db %>
+  
+quentin:
+  id: 3
+  crypted_password: 19b64f581a3ffac78ca17a1f3ec7665943ec07d5
+  salt: e2ae26823f164436b1e1a8668ba9f9ee01218876 #passpass
+  first_name: Quentin 
+  last_name: Tarantino
+  address: 123 Fake St\r\nUnit 123\r\nToronto, On\r\nCanada
+  job_title: Cypher
+  started_on: <%= 5.months.ago.to_s :db %>
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: quentin@theworkinggroup.ca
+  webpage_text: my super duper webpage
+  webpage_address: quentin
+  is_active: 1
+  role: 0
+  remember_token:
+  remember_token_expires_at:
+  created_at: <%= 5.months.ago.to_s :db %>
+  updated_at: <%= 1.months.ago.to_s :db %>
+  
+dominic:
+  id: 4
+  crypted_password: 19b64f581a3ffac78ca17a1f3ec7665943ec07d5
+  salt: e2ae26823f164436b1e1a8668ba9f9ee01218876 #passpass
+  first_name: Dominic 
+  last_name: Bortolussi
+  address: 123 Fake St\r\nUnit 123\r\nToronto, On\r\nCanada
+  job_title: The Keykeeper
+  started_on: <%= 3.years.ago.to_s :db %>
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: dominic@theworkinggroup.ca
+  webpage_text: my super duper webpage
+  webpage_address: domb
+  is_active: 0
+  role: 0
+  remember_token:
+  remember_token_expires_at:
+  created_at: <%= 3.years.ago.to_s :db %>
+  updated_at: <%= 7.months.ago.to_s :db %>
+
+cameron:
+  id: 5
+  crypted_password: 19b64f581a3ffac78ca17a1f3ec7665943ec07d5
+  salt: e2ae26823f164436b1e1a8668ba9f9ee01218876 #passpass
+  first_name: Cameron
+  last_name: Booth
+  address: 123 Fake St\r\nUnit 123\r\nToronto, On\r\nCanada
+  job_title: Oracle
+  started_on: <%= 3.years.ago.to_s :db %>
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: dominic@theworkinggroup.ca
+  webpage_text: my super duper webpage
+  webpage_address: domb
+  is_active: 1
+  role: 0
+  remember_token:
+  remember_token_expires_at:
+  created_at: <%= 3.years.ago.to_s :db %>
+  updated_at: <%= 7.months.ago.to_s :db %>
+  
+hesham:
+  id: 6
+  crypted_password: 19b64f581a3ffac78ca17a1f3ec7665943ec07d5
+  salt: e2ae26823f164436b1e1a8668ba9f9ee01218876 #passpass
+  first_name: Hesham
+  last_name: El-Nahhas
+  address: 123 Fake St\r\nUnit 123\r\nToronto, On\r\nCanada
+  job_title: Neo "Woah"
+  started_on: <%= 3.months.ago.to_s :db %>
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: hesham@theworkinggroup.ca
+  webpage_text: my super duper webpage
+  webpage_address: heshame
+  is_active: 1
+  role: 0
+  remember_token:
+  remember_token_expires_at:
+  created_at: <%= 2.months.ago.to_s :db %>
+  updated_at: <%= 2.months.ago.to_s :db %>
+
+trevor:
+  id: 7
+  crypted_password: 19b64f581a3ffac78ca17a1f3ec7665943ec07d5
+  salt: e2ae26823f164436b1e1a8668ba9f9ee01218876 #passpass
+  first_name: Trevor 
+  last_name: Twining
+  address: 123 Fake St\r\nUnit 123\r\nToronto, On\r\nCanada
+  job_title: Ghost
+  started_on: <%= 1.months.ago.to_s :db %>
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: trevor@workingdata.net
+  webpage_text: my super duper webpage
+  webpage_address: trevort
+  is_active: 1
+  role: 0
+  remember_token:
+  remember_token_expires_at:
+  created_at: <%= 1.months.ago.to_s :db %>
+  updated_at: <%= 1.months.ago.to_s :db %>
+
+notified_admin:
+  <<: *admin
+  id: 8
+  email: notified_admin@workingdata.net
+  first_name: Notified
+  last_name: Admin
+  webpage_address: notifiedadmin
+  role: 2
+  
+notified_admin_2:
+  <<: *admin
+  id: 9
+  email: notified_admin2@workingdata.net
+  first_name: Notified
+  last_name: Admin2
+  webpage_address: notifiedadmin2
+  role: 2
+
+<% 10.upto(100) do |id| %>
+agent<%= id %>:
+  id: <%= id %>
+  crypted_password: 19b64f581a3ffac78ca17a1f3ec7665943ec07d5
+  salt: e2ae26823f164436b1e1a8668ba9f9ee01218876 #passpass
+  first_name: Agent 
+  last_name: Smith
+  address: The Matrix
+  job_title: Agent
+  started_on: <%= 1.months.ago.to_s :db %>
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: matrix_has_you<%= id%>@workingdata.net
+  webpage_text: you are just human
+  webpage_address: smith<%= id %>
+  is_active: 1
+  role: 0
+  remember_token:
+  remember_token_expires_at:
+  created_at: <%= 1.months.ago.to_s :db %>
+  updated_at: <%= 1.months.ago.to_s :db %>
+<% end %>

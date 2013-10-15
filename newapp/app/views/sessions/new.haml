@@ -1,0 +1,43 @@
+%h1 Please Login
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    - form_for :session, @session, :url => sessions_path(), :html => {:method => :post, :id => 'login_form'} do |f|
+      %dl.form_list
+        %dt 
+          %label{:for => "email"} Email:
+        %dd.user_form
+          = text_field_tag 'email'
+    
+        %dt
+          %label{:for => "password"} Password:
+        %dd.user_form
+          = password_field_tag 'password'
+
+      .dgreen_box{:style=>'margin-bottom:5px; margin-top:5px'}
+        .dgreen_header
+          %div
+        .dgreen_content
+          %dl.form_list
+            %dt &nbsp;
+            %dd
+              = check_box_tag 'remember_me'
+              %label{:for => "remember_me"} Remember me when I come back
+            
+          .clearfloat
+        
+        .dgreen_footer
+          %div
+    
+      %p
+        Forgot your password? 
+        = link_to 'Recover it here', forgot_password_path
+      
+      %dl.form_list
+        %dt
+        %dd
+          = submit_tag 'Log in', :class => 'dont_display'
+          .button
+            = link_to 'Log in', '#', :onclick => "$('login_form').submit(); return false;"

@@ -1,0 +1,35 @@
+%h1 Careers
+
+= display_page('Careers')
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    - form_for :job_candidate, @job_candidate, :url => job_candidates_path(), :html => {:method => :post, :id=>"new_candidate_form"} do |f|
+      = render :partial => 'form'
+
+      .dgreen_box{:style=>'margin-bottom:5px; margin-top:5px'}
+        .dgreen_header
+          %div
+        .dgreen_content
+          %dl.form_list
+            - @career_reports.each do |career_report|
+              %dt
+              %dd  
+                = check_box("reports", career_report.id, {:name=>"job_candidate[reports][#{career_report.id}]"}, "yes", "no")
+                = career_report.name
+          .clearfloat 
+        .dgreen_footer
+          %div
+
+
+      = submit_tag "Create", :class => 'dont_display' 
+
+    .button
+      = link_to 'Cancel', '/'
+    .button
+      = link_to 'Send', '#', :onclick => "$('new_candidate_form').submit(); return false;"
+    .clearfloat
+
+= careers_conversion_code if session[:show_careers_conversion]

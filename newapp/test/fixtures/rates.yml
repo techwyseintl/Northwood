@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  rate: 25%
+  term: 6 months
+two:
+  id: 2
+  rate: 35%
+  term: 12 months

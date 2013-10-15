@@ -1,0 +1,18 @@
+dog_image:
+  id: 1
+  content_type: image/jpeg
+  size: 11017
+  thumbnail: 
+  height: 400
+  filename: dog_tall_narrow.jpg
+  parent_id: 
+  width: 197
+dog_image_thumb:
+  id: 2
+  content_type: image/jpeg
+  size: 10999
+  thumbnail: thumb
+  height: 300
+  filename: dog_tall_narrow_thumb.jpg
+  parent_id: 1
+  width: 148

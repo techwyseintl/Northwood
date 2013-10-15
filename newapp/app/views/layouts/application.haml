@@ -1,0 +1,88 @@
+!!!
+%html{"xmlns"=>"http://www.w3.org/1999/xhtml", "xml:lang"=>"en"}
+  %head
+    %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}/
+
+    = display_header
+
+    = stylesheet_link_tag 'master', 'content'
+    = javascript_include_tag :defaults
+        
+  %body
+
+    #main
+      #top_login_link
+        -if logged_in?
+          ="#{@current_user.first_name + " " + @current_user.last_name} - "
+          =link_to 'My Account', users_path if @current_user.is_admin?
+          =link_to 'My Account', user_path(@current_user) if !@current_user.is_admin?
+          ='-'
+          =link_to 'Logout', '/logout'
+        -else
+          =link_to 'Agent Login', '/login'
+
+      #header
+        =header_image
+                    
+      #content
+        
+        #left_column{:style => @referral_area ? 'display:none' : ''}
+          = render :partial => 'layouts/menu'
+          = render :partial => 'layouts/left_column_content'
+        
+        #main_column{:style => @referral_area ? 'width:700px' : ''}
+          - if flash[:notice]
+            .flash_notice
+              %p= flash[:notice]
+              .footer
+                
+          - if flash[:error]
+            .flash_error
+              %p= flash[:error]
+          
+          - if @page_header
+            %h1= @page_header 
+          = @content_for_layout
+        
+        .clearfloat &nbsp;
+      
+      #footer
+        .content
+          .hr
+          .address
+            7676 Woodbine Avenue Suite 300 Markham, ON L3R 2N2    Phone: 
+            -if @agent_area
+              = @user.phone
+              = mail_to @user.email, @user.email, :encode => 'hex'
+            -else
+              416-969-8130
+              = mail_to 'info@northwoodmortgage.com', 'info@northwoodmortgage.com', :encode => 'hex'
+
+          .hr
+          .logos
+            %h2 As heard on:
+            = link_to image_tag('content/680news-60.gif'), 'http://680news.com'
+            &nbsp;&nbsp;&nbsp;
+            = link_to image_tag('content/640news-60.gif'), 'http://640toronto.com'
+
+          .logos
+            = image_tag 'content/CAAMP-Logo-Final-60.gif'
+            &nbsp;&nbsp;&nbsp;
+            = image_tag 'content/IMBA-Logo-60.gif'
+          .copyright
+            &copy; 1999-2007 Northwood Mortgage &#153;
+            = link_to "Terms &amp; Conditions", '/terms-and-conditions' 
+            |
+            License #10349
+            | Developed by 
+            = link_to "The Working Group", "http://www.theworkinggroup.ca"
+            &amp; Designed by 
+            = link_to "Mouth Media", "http://www.mouthmedia.com"
+          .disclaimer
+            The material provided in the pages of this website is for informational purposes only. Although the site owner and creators assume the information to be correct, and attempt to keep information in the pages of this website as current as possible, they do not warrant the accuracy or completeness of any information included in or linked to this page.
+            -if session[:show_tracking_scripts]
+              =render :partial => 'layouts/tracking_scripts' 
+              -session[:show_tracking_scripts] = nil
+              
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> </script> 
+    <script type="text/javascript"> _uacct = "UA-2642632-1"; urchinTracker(); </script>

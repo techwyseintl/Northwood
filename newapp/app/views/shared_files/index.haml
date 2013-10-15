@@ -1,0 +1,31 @@
+%h1 Shared Files
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+    =render :partial => 'file_upload_form' if @current_user.is_admin?
+
+    .clearfloat
+
+    %table.list_table{:cellpadding => 0, :cellspacing => 0}
+      %tr
+        %th Filename
+        %th Size
+        - if @current_user.is_admin?
+          %th &nbsp;
+    
+      -for shared_file in @shared_files
+        - class_style = cycle('odd', 'even')
+        %tr{:class => class_style}
+          %td= link_to truncate(shared_file.filename, 50), shared_file_path(shared_file), :title=>shared_file.filename
+          %td{:style => 'white-space:nowrap;text-align: right'}= number_to_human_size shared_file.size, 2
+          - if @current_user.is_admin?
+            %td= link_to 'Delete', shared_file_path(shared_file), :confirm => 'Are you sure?', :method => :delete
+        - unless shared_file.description.blank?
+          %tr{:class => class_style}
+            %td{:colspan => (@current_user.is_admin? ? 3 : 2), :style => 'font-size: 11px'}
+              %i= h(shared_file.description)
+    - if @current_user.is_admin?
+      .button
+        = link_to 'Send notification to agents', shared_files_notification_path, :title=>"Send an email notification to all the agents with the list af all the current shared files."     

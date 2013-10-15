@@ -1,0 +1,77 @@
+.left_column
+  %h3 Contact information
+    
+  - if @current_user.is_admin?
+    .dgreen_box{:style=>'width:280px; margin-bottom:5px; margin-top:5px'}
+      .dgreen_header
+        %div
+      .dgreen_content
+        %dl.form_list
+          %dt
+            %label{:for=>"contact_user_id"} Agent:
+          %dd.contact_form
+            = select 'contact', 'user_id', User.find(:all, :order => :first_name).collect {|u| [ u.full_name, u.id ]}, {:include_blank => true}, {:style => 'width: 170px;'}
+        .clearfloat
+
+      .dgreen_footer
+        %div
+  %dl.form_list   
+    %dt
+      %label{:for=>"contact_first_name"} First Name:
+    %dd.contact_form
+      = text_field 'contact', 'first_name'
+    
+    %dt
+      %label{:for=>"contact_last_name"} Last Name:
+    %dd.contact_form
+      = text_field 'contact', 'last_name'
+  
+      
+    %dt
+      %label{:for=>"contact_address"} Address:
+    %dd.contact_form
+      ~ text_area 'contact', 'address', 'cols' => 29, 'rows' => 2
+      
+      
+    %dt
+      %label{:for=>"contact_phone"} Home Phone:
+    %dd.contact_form
+      = text_field 'contact', 'phone'
+  
+    %dt
+      %label{:for=>"contact_mobile"} Mobile Phone:
+    %dd.contact_form
+      = text_field 'contact', 'mobile'
+        
+    %dt
+      %label{:for=>"contact_fax"} Fax:
+    %dd.contact_form
+      = text_field 'contact', 'fax'
+  
+    %dt
+      %label{:for=>"contact_email"} Email:
+    %dd.contact_form
+      = text_field 'contact', 'email'
+
+.right_column
+  %h3 Newsletter Subscriptions
+    
+  %dl.form_list
+    -for @newsletter in Newsletter.find(:all)
+      %dt
+      %dd
+        / I just couldn't figure out any other way to do this
+        / I need to send @contact.id to newsletter.has_subscription_from
+        -@newsletter.prepare(@contact.id)
+        =check_box :newsletter, "has_subscription_from", :name=>"contact[subscribes_to][#{@newsletter.id}]"
+        %b=@newsletter.name
+
+        
+          
+%dl.form_list      
+  %dt{:style=>'text-align:left'}
+    %label{:for=>"contact_notes"} Other notes:
+  %dd{:style=>"margin-left:0;clear:both"}
+    ~ text_area 'contact', 'notes', 'cols' => 100, 'rows' => 10, :style=>"width: 453px"
+  
+.clearfloat

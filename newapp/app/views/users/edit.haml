@@ -1,0 +1,18 @@
+= render :partial=> 'layouts/user_navigation', :locals => { :section => "Details" }
+  
+  
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    = error_messages_for 'user'
+    - form_for :user, @user, :url => user_path(@user), :html => {:multipart => true, :method => "put", :id => "user_edit_form"} do
+      = render :partial => 'form'
+      = submit_tag 'Edit', :class => 'dont_display'
+    
+    
+    .button
+      = link_to 'Cancel', user_path(@user)
+    .button
+      = link_to 'Save', '#', :onclick => "$('user_edit_form').submit(); return false;"
+    .clearfloat

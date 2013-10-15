@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+home_page:
+  id: 1
+  name: Home Page
+  text: This is the home page
+  html: <p>This is the home page</p>
+sub_page:
+  id: 2
+  name: Sub Page
+  text: This is a sub page
+  html: <p>This is a sub page</p>

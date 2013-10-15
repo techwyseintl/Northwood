@@ -1,0 +1,18 @@
+%dl.form_list
+  %dt
+    %label{:for=>"newsletter_issue_name"} Email subject
+  %dd.user_form
+    = text_field 'newsletter_issue', 'subject'
+  
+  %div{:style=>'margin-bottom: 20px'}
+  %label{:for =>"newsletter_issue_text"} HTML/Textile Content for this Issue:
+  ~ textile_editor 'newsletter_issue', 'text', 'cols' => 100, 'rows' => 40, :style=>"width: 453px"
+  = textile_editor_initialize
+  
+  %div{:style=>'margin-bottom: 20px'}
+  %label{:for =>"newsletter_issue_text"} 
+    Plain Text Content for this Issue:
+    %br/
+    %i Some email clients do not support (or configured for) viewing html content. Please provide alternative for the above content.
+  ~ text_area 'newsletter_issue', 'plain_text', 'cols' => 100, 'rows' => 40, :style=>"width: 453px"
+    

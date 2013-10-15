@@ -1,0 +1,27 @@
+<%= @newsletter_issue.subject %>
+
+<% if @agent %>
+<%= @agent.full_name %>
+<%= @agent.job_title %>
+<%= @agent.address %>
+<%= "Phone: #{@agent.phone}" unless @agent.phone.nil? or @agent.phone.empty? %>
+<%= "Mobile: #{@agent.mobile}" unless @agent.mobile.nil? or @agent.mobile.empty? %>
+<%= "Fax: #{@agent.fax}" unless @agent.fax.nil? or @agent.fax.empty? %>
+<%= @agent.email %>
+<% end %>   
+       
+Welcome <%= @user.full_name %>,
+       
+<%= @newsletter_issue.plain_text %>
+
+<% if @agent %>
+Mortgage Qualifier Calculator: <%= SITE_URL + '/' + @agent.webpage_address + '/mortgage-qualifier' %>  
+Payment Calculator: <%= SITE_URL + '/' + @agent.webpage_address + '/payment-calculator' %> 
+Pre-Approval Application Form: <%= SITE_URL + agent_pre_approval_application_path(@agent.webpage_address) %>
+<% else %>   
+Mortgage Qualifier Calculator: <%= SITE_URL + '/mortgage-calculators/mortgage-qualifier' %>  
+Payment Calculator: <%= SITE_URL + '/mortgage-calculators/payment-calculator' %> 
+Pre-Approval Application Form: <%= SITE_URL + pre_approval_application_path %>
+<% end %>   
+       
+To unsubscribe from this newsletter please follow this link:  <%=SITE_URL + confirm_unsubscribe_newsletter_path(:id=>@newsletter_issue.newsletter_id, :email=>@user.email) %>

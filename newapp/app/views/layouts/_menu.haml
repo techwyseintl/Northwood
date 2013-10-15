@@ -1,0 +1,52 @@
+- classname = (!params[:path] or (params[:path] and !params[:path].empty?)) ? 'small_header' : ''
+%ul#left_nav{:class => classname}
+
+
+  - if @agent_area
+    %li= link_to 'Agent Contact', '/' + @user.webpage_address
+    %li= link_to 'Mortgage Rates', agent_mortgage_rates_path(@user.webpage_address)
+    %li= link_to 'Pre-approval Application', agent_pre_approval_application_path(@user.webpage_address)
+    %li= link_to 'Mortgage Qualifier', '/' + @user.webpage_address + '/mortgage-qualifier'
+    %li= link_to 'Payment Calculator', '/' + @user.webpage_address + '/payment-calculator'
+    %li= link_to 'Land Transfer Tax', '/' + @user.webpage_address + '/land-transfer-tax'
+    %li= link_to 'Mortgage Information', '/' + @user.webpage_address + '/mortgage-information'
+    %li= link_to 'Rate Watch', agent_rate_watch_signup_path(@user.webpage_address)
+    
+  - elsif logged_in? and !@public_area
+    - if current_user.is_admin?
+      %li= link_to 'Home - Agents List', users_path
+      %li= link_to 'All Contacts', all_contacts_path 
+      %li= link_to 'Referral pages', referrals_path 
+      %li= link_to 'Mortgage Rates', rates_path    
+      %li= link_to 'Newsletters', newsletters_path    
+      %li= link_to 'Career Reports', career_reports_path
+      %li= link_to 'Career Applicants', job_candidates_path
+      %li= link_to 'Site Pages', pages_path
+      %li= link_to 'Site Images', site_images_path
+      %li= link_to 'View My Profile', user_path(current_user)
+              
+    - else
+      %li= link_to 'Account Home', user_path(current_user)
+    %li= link_to 'Shared Files', shared_files_path
+    %li= link_to 'Policies & Procedures', policies_procedures_files_path
+          
+  - elsif !request_from_reversemortgageplan?
+    %li
+      %span.phone 416-969-8130
+    %li= link_to 'Home', SITE_URL ,{ :title => "Home" }
+    %li= link_to 'About Us', '/about',{ :title => "About Us" }
+    %li= link_to 'Mortgage Rates', '/mortgage-rates'      
+    %li= link_to 'Mortgage Solutions', '/mortgages'      
+    %li= link_to 'Apply Now', pre_approval_application_path
+    %li= link_to 'Mortgage Renewal', '/mortgage-renewal'
+    %li= link_to 'Our Consultants', '/agents'    
+    %li= link_to 'Client Testimonials', '/testimonials' 
+    %li= link_to 'Mortgage Calculators', '/mortgage-calculators/mortgage-qualifier'
+    %li= link_to 'Careers', '/careers'      
+    %li= link_to 'Northwood Mortgage Life', '/northwood-mortgage-life'
+    %li= link_to 'Helpful Client Info', '/helpful-client-info'
+    %li= link_to 'Mortgage Information', '/mortgage-information'
+    %li= link_to 'Reverse Mortgage Plan', 'http://reversemortgageplan.ca'
+    %li= link_to 'Contact Us', '/contact'
+
+    

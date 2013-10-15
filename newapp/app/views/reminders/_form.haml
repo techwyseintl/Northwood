@@ -1,0 +1,13 @@
+- reminder = form
+
+%dl.form_list
+  %dt
+    %label{:for => 'event_remind_on'} Date: 
+  %dd
+    = f.date_select 'remind_on'
+    
+  %dt 
+    Message:
+  %dd
+    ~ f.text_area 'message', :cols => 38, :rows => 2, :id => "reminder_message_#{reminder.id}"
+.clearfloat

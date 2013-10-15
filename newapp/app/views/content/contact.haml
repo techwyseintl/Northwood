@@ -1,0 +1,31 @@
+%h1 Contact Us
+.contact_page
+  %h2 Northwood Mortgage
+  - form_for :contact, @contact, :url => contact_request_path do |f|
+    .left_column
+      - if @user
+        = hidden_field 'contact', 'user_id', :value => @user.id
+      %label First Name:
+      = f.text_field :first_name, :maxlength => 40
+      %label Last Name:
+      = text_field 'contact', 'last_name', :id => 'last_name', :maxlength => 40
+      - if request_from_reversemortgageplan?
+        %label Address:
+        ~ text_area 'contact', 'address', :id => 'address', :rows => 2, :cols => 15
+      %label Phone:
+      = text_field 'contact', 'phone', :id => 'phone', :maxlength => 40
+      .contact_form_submit_button
+        = link_to "<span>Send Request</span>", "", :onclick => "$('nm_contact_form_submit').click(); return false;", :id => 'contact_form_submit_button'
+    
+    .right_column
+      %label Email:
+      = text_field 'contact', 'email', :id => 'email', :maxlength => 40
+      %label Comments:
+      ~ text_area 'contact', 'notes', :id => 'comments', :rows => 5, :cols => 15
+      .note *All fields are mandatory
+      = submit_tag 'Submit Registration', :style=> 'display:none', :id=>"nm_contact_form_submit"
+
+    = hidden_field_tag 'contact_page', 'true'  
+
+  .clearfloat  
+  = display_page('Contact Us')

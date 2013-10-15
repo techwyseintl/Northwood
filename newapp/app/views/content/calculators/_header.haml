@@ -1,0 +1,8 @@
+%h1 Handy Tools
+
+= display_page('Mortgage Calculators')
+
+= link_to 'Mortgage<br/>Qualifier', '/mortgage-calculators/mortgage-qualifier', :class=>"calculator_green_box #{params[:path][1]=='mortgage-qualifier' ? 'selected_box' : ''}"
+= link_to 'Payment<br/>Calculator', '/mortgage-calculators/payment-calculator', :class=>"calculator_orange_box #{params[:path][1]=='payment-calculator' ? 'selected_box' : ''}"
+= link_to 'Land Transfer<br/>Tax', '/mortgage-calculators/land-transfer-tax', :class=>"calculator_blue_box #{params[:path][1]=='land-transfer-tax' ? 'selected_box' : ''}"
+.clearfloat      

@@ -1,0 +1,8 @@
+%span.reminder_links
+  = link_to_function('Edit') {|page| page.hide("reminder_show_#{reminder.id}"); page.show("reminder_edit_#{reminder.id}")}
+  
+  = link_to_remote 'Delete', :url => reminder_path(@user, @contact, reminder), :method => :delete, :before => "Element.show($('reminder_delete_icon_#{reminder.id}'))"
+  
+  = image_tag('updating.gif', :id => "reminder_delete_icon_#{reminder.id}", :style=>'display:none')
+  
+="#{reminder.remind_on.to_s :default}: #{reminder.message}" 

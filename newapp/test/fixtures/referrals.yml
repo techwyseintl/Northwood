@@ -1,0 +1,4 @@
+default_referral:
+  id: 1
+  name: Test referral
+  webpage_address: default-referral

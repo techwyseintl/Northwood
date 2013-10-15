@@ -1,0 +1,15 @@
+- agent_home = @agent_area ? @user.webpage_address + '/' : ''
+  
+#content_page_submenu
+  #content_page_submenu_header
+  #content_page_submenu_content
+    %ul
+      %li= link_to 'Closing Costs', "/#{agent_home}mortgage-information/closing-costs"
+      %li= link_to 'Credit Rating', "/#{agent_home}mortgage-information/credit-rating"
+      %li= link_to 'Mortgage Basics', "/#{agent_home}mortgage-information/mortgage-basics"
+      %li= link_to 'Mortgage Features', "/#{agent_home}mortgage-information/mortgage-features"
+      %li= link_to 'Refinancing, Renewing', "/#{agent_home}mortgage-information/refinancing-renewing"
+      %li= link_to 'Rental Comparisons', "/#{agent_home}mortgage-information/rental-comparisons"
+      %li= link_to 'The Right Home', "/#{agent_home}mortgage-information/right-home"
+      %li= link_to 'Types of Mortgages', "/#{agent_home}mortgage-information/types-of-mortgages"
+  #content_page_submenu_footer

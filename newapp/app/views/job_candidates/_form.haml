@@ -1,0 +1,20 @@
+= error_messages_for 'job_candidate'
+
+%dl.form_list
+  %dt
+    %label{:for=>"job_candidate_first_name"} First Name
+  %dd.user_form
+    = text_field 'job_candidate', 'first_name'
+  %dt
+    %label{:for=>"job_candidate_last_name"} Last Name
+  %dd.user_form
+    = text_field 'job_candidate', 'last_name'
+  %dt
+    %label{:for=>"job_candidate_email"} Email
+  %dd.user_form
+    = text_field 'job_candidate', 'email'
+  %dt
+    %label{:for=>"job_candidate_phone"} Phone #
+  %dd.user_form
+    = text_field 'job_candidate', 'phone'
+    

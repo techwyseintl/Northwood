@@ -1,0 +1,5 @@
+page.hide 'reminder_add_icon'
+page.visual_effect :BlindUp, 'new_reminder', :duration => 0.2
+page.show 'new_reminder_link'
+page.insert_html :top, 'reminders', :partial => 'reminders/reminder', :locals => {:reminder => @reminder}
+page.visual_effect :highlight, "reminder_show_#{@reminder.id}", :duration => 4

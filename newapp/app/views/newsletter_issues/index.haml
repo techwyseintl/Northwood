@@ -1,0 +1,42 @@
+%h1="#{@newsletter.name} Issues"
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+    %p
+      ="There are currently #{@newsletter.subscriptions.size} users subscribed to the <b>#{@newsletter.name}</b> newsletter."
+      %br
+      Scheduled newsletter issues will be sent tonight at midnight.
+        
+    .add_new_record
+      = link_to '+ Add New Issue', new_newsletter_issue_path      
+    %table.list_table{:cellpadding => 0, :cellspacing => 0}
+      %tr
+        %th Created On
+        %th Subject
+        %th Status
+        %th{:colspan=>5}
+                        
+      - @newsletter_issues.each do |newsletter_issue|
+        %tr{:valign=>"top", :class=>"#{cycle('odd', 'even')}"}
+          %td= newsletter_issue.created_at.to_s :default
+          %td= link_to newsletter_issue.subject, newsletter_issue_path(@newsletter, newsletter_issue)
+          -if newsletter_issue.status == 0
+            %td Ready for Sending
+            %td= link_to "Send", schedule_for_sending_newsletter_issue_path(@newsletter, newsletter_issue), :confirm => 'This issue will be sent tonight at midnight. You will not be able to edit it after it has been sent.'
+            %td= link_to 'Edit', edit_newsletter_issue_path(@newsletter, newsletter_issue)
+            %td= link_to 'Delete', newsletter_issue_path(@newsletter, newsletter_issue), :confirm => 'Are you sure? ', :method => :delete     
+          -elsif newsletter_issue.status == 1
+            %td Scheduled for sending
+            %td= link_to "Cancel", unschedule_for_sending_newsletter_issue_path(@newsletter, newsletter_issue), :confirm => 'This issue will not be sent tonight at midnight. You may edit and reschedule this newletter issue'
+            %td= link_to 'Edit', edit_newsletter_issue_path(@newsletter, newsletter_issue)
+            %td= link_to 'Delete', newsletter_issue_path(@newsletter, newsletter_issue), :confirm => 'Are you sure? ', :method => :delete
+          -elsif newsletter_issue.status == 2
+            %td{:colspan=>4} 
+              ="Sent on #{newsletter_issue.sent_at.to_s :default}"
+          %td= link_to 'Copy', copy_newsletter_issue_path(@newsletter, newsletter_issue)                        
+          %td= link_to "Test Send", test_send_newsletter_issue_path(@newsletter, newsletter_issue), :style=>'font-weight:bold'
+    .button
+      = link_to 'Back To Newsletters', newsletters_path
+    .clearfloat 

@@ -1,0 +1,17 @@
+%h1 Edit Issue
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    
+    = error_messages_for 'newsletter_issue'
+    - form_for :newsletter_issue, @newsletter_issue, :url => newsletter_issue_path(@newsletter, @newsletter_issue), :html => {:method => :put, :id => 'newsletter_issue_edit_form'} do |f|
+      = render :partial => 'form'
+      = submit_tag 'Edit', :class => 'dont_display'
+
+    .button
+      = link_to 'Cancel', newsletter_issues_path
+    .button
+      = link_to 'Save', '#', :onclick => "$('newsletter_issue_edit_form').submit(); return false;"
+    .clearfloat

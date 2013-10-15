@@ -1,0 +1,17 @@
+Dear <%=@user.full_name%>
+
+New files have been uploaded to the Northwood Mortgage shared folder:
+
+<% @shared_files.each do |shared_file|%>
+* [<%= shared_file.created_at.to_s :default %>]  <%= shared_file.filename %> - <%= SITE_URL+shared_file_path(shared_file) %>
+<% end %>
+
+
+
+Please login to your account at: <%= SITE_URL %>/login
+and choose "Shared Files" from the side navigation to access these documents. 
+
+
+Sincerely,
+
+Northwood Mortgage

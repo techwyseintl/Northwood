@@ -1,0 +1,163 @@
+    <style type="text/css">   
+      #main {
+        font: 12px Arial, Verdana, sans-serif;
+        width: 599px;
+        margin: auto;
+        position: relative; 
+        border-left: solid #f7d2aa 1px;
+        border-right: solid #f7d2aa 1px;
+        background: #f3f6f3; }
+      #main a { color: #29531c; }
+      #main a:hover { color: #000; }
+      #header {
+        width: 599px; }
+        #header a {
+          display: block;
+          position: absolute;
+          height: 85px;
+          width: 250px; }
+          #header a span {
+            display: none; }
+        #header #header_image {
+          height: 244px;
+          width: 599px;
+          margin: auto; }
+      
+      .content {}
+        .content h1 {
+          font: normal 19px Trebuchet MS, sans-serif;
+          color: #ff9914;
+          margin-bottom: 15px; }
+        .content .header_links {
+          margin-top: -5px;
+          margin-bottom: 20px;
+          font-size: 110%; }
+          .content .header_links a {
+          text-decoration: none; }
+          .content .header_links a.active {
+          font-weight: bold; }
+        .content h2 {
+          font: bold 14px Arial, sans-serif;
+          color: #29531c;
+          margin-bottom: 15px; }
+        .content h3 {
+          font: bold 12px Arial, sans-serif; 
+          color: #ff9914; }
+        .content ul, .content ol {
+          margin-left: 30px; }
+        .content #user_info {
+          color: #29531c;
+          width: 250px;
+          float: right;
+          text-align: right; }
+          .content #user_photo_box {
+            float: right;
+            background-color:#CFDACF;
+            border:1px solid #29531C;
+            padding:3px;
+            margin-left:10px;}
+          .content #user_photo_box img {
+            border:2px solid #EEEEEE;}
+        .content p.newsletter_welcome {
+          margin-top: 35px; }
+        .content div.newsletter_body {
+          clear: both;}
+      
+      #footer {
+        font: 10px Trebuchet MS, sans-serif;}
+        #footer .content {
+          width: 599px;
+          margin: auto; }
+          #footer .content .address {
+            font-size: 11px;
+            text-align: center;
+            padding: 10px 0px; }
+          #footer .content .unsubscribe {
+            text-align: center;
+            padding: 10px 30px; }
+            #footer .content .unsubscribe a {
+            color: #ff9000; }
+      
+      .hr {
+        background:transparent url(<%= SITE_URL %>/images/newsletter/hr.gif) repeat-x scroll 0%;
+        font-size:0px;
+        height:1px; }
+      
+      .clearfloat {
+        clear: both;
+        height: 0px;
+        font-size: 0px; }    
+    </style>
+    
+  <table width="599px" id="main" bgcolor="#f3f6f3">
+    <tr><td colspan="3"><img src='<%= "#{SITE_URL}/images/newsletter/header1.gif"%>' alt="Header1"/></td></tr>
+    <tr class="content">
+      <td width="200px" style="padding-left:20px;" height="20px">
+        <font face="arial" size="2">
+        <font color="#ff9914"><h1 class="newsletter_subject"><%= @newsletter_issue.subject %></h1></font>
+        <p class="newsletter_welcome">Welcome <%= @user.full_name %>,</p>
+        </font>
+      </td>
+      <td align="right" valign="top" id="user_info">
+        <font face="arial" size="2">
+        <% if @agent %>
+          <b><%= @agent.full_name %></b><br />
+          <%= @agent.job_title %><br />
+          <%= @agent.address %><br />
+          <%= "Phone: #{@agent.phone}<br />" unless @agent.phone.nil? or @agent.phone.empty? %>
+          <%= "Mobile: #{@agent.mobile}<br />" unless @agent.mobile.nil? or @agent.mobile.empty? %>
+          <%= "Fax: #{@agent.fax}<br />" unless @agent.fax.nil? or @agent.fax.empty? %>
+          <%= mail_to @agent.email, @agent.email, :encode => 'hex' %>
+        <% end %>
+        </font>
+      </td>
+      <td valign="top" style="padding-right:20px;">
+        <% if @agent %>
+          <% if @agent.photo %>
+            <div id='user_photo_box'>
+              <img src='<%= "#{SITE_URL}/user/photo/#{@agent.id}/#{File.basename(@agent.photo)}" %>' alt="<%= @agent.full_name %>" />
+            </div>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" class="content" style="padding-left:20px;padding-right:20px;">
+        <font face="arial" size="2">
+        <div class='newsletter_body'><%=@newsletter_issue.html%></div>
+        </font>
+      </td>
+    </tr>
+    <tr colspan="3" id='footer'>
+      <td colspan="3" align="center" class='content'>
+        <font face="arial" size="1">
+        <div class='address'>
+          <% if @agent %>
+            <%= link_to 'Mortgage Qualifier Calculator', SITE_URL + '/' + @agent.webpage_address + '/mortgage-qualifier' %> | 
+            <%= link_to 'Payment Calculator', SITE_URL + '/' + @agent.webpage_address + '/payment-calculator' %> |
+            <%= link_to 'Pre-Approval Application Form', SITE_URL + agent_pre_approval_application_path(@agent.webpage_address) %><br/><br/>
+          <% else %>   
+            <%= link_to 'Mortgage Qualifier Calculator', SITE_URL + '/mortgage-calculators/mortgage-qualifier' %> | 
+            <%= link_to 'Payment Calculator', SITE_URL + '/mortgage-calculators/payment-calculator' %> |
+            <%= link_to 'Pre-Approval Application Form', SITE_URL + pre_approval_application_path %><br/><br/>
+          <% end %>   
+        </div>
+        <div class='hr'><img src='<%= "#{SITE_URL}/images/newsletter/hr.gif" %>' /></div>
+        <div class='address'>
+          <% if @agent %>
+            7676 Woodbine Avenue Suite 300 Markham, Ontario L3R 2N2 Phone: <%= @agent.phone unless @agent.nil? or @agent.phone.nil? or @agent.phone.empty? %>
+            <%= mail_to(@agent.email, @agent.email, :encode => 'hex') unless @agent.nil? %>
+          <% else %>  
+            7676 Woodbine Avenue Suite 300 Markham, Ontario L3R 2N2 Phone: 416-969-8130
+            <%= mail_to('info@northwoodmortgage.com', 'info@northwoodmortgage.com', :encode => 'hex') %>
+          <% end %>   
+        </div>
+        <div class='hr'><img src='<%= "#{SITE_URL}/images/newsletter/hr.gif" %>' /></div>
+        <div class='unsubscribe'>
+          Click <%= link_to 'here', SITE_URL + confirm_unsubscribe_newsletter_path(:id=>@newsletter_issue.newsletter_id, :email=>@user.email) %> to unsubscribe from the Northwood Mortgage Newsletter
+        </div>
+        </font>
+      </td>
+    </tr>
+  </table>
+

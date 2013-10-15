@@ -1,0 +1,22 @@
+<p>Dear <b><%=@user.full_name%></b></p>
+
+<p>A new career applicant has registered on the website:</p>
+
+<p>
+<b>Name:</b> <%= @career_applicant.full_name %>
+<br/><b>Email:</b> <%= @career_applicant.email %>
+</p>
+<% if @career_applicant.career_reports.size == 0 %>
+  <p>The applicant did not request any reports.</p>
+<% else %>
+  <p>The following list of document was requested by the applicant:</p>
+  <ul>
+  <% @career_applicant.career_reports.each do |report| %>
+    <li><%= link_to report.name, SITE_URL+report.public_filename %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<p>Sincerely,
+<br/>Northwood Mortgage
+</p>

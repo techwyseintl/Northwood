@@ -1,0 +1,19 @@
+%h1 Pre-approval Application
+
+= display_page('Pre-approval Application')
+  
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    = error_messages_for 'contact'
+
+    - url = @agent ? agent_pre_approval_application_path(@agent.webpage_address) : pre_approval_application_path()
+    
+    - form_for :contact, @contact, :url => url, :html => {:method => :post, :id => 'contact_create_form'} do |f| 
+      = render :partial => 'form'
+      = submit_tag 'Save', :class => 'dont_display'
+
+    .button
+      = link_to 'Send Inquiry', '#', :onclick => "$('contact_create_form').submit(); return false;"
+    .clearfloat 

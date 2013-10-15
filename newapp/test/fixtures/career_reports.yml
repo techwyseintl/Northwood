@@ -1,0 +1,22 @@
+report_1:
+  id: 1
+  name: An Overview of the Mortgage Industry
+  filename: http://www.somesite.com/report1.jpg
+  content_type: image/jpeg
+  size: 11017
+  height: 400
+  filename: dog_tall_narrow.jpg
+  parent_id: 
+  width: 197
+
+report_2:
+  id: 2
+  name: An Overview of the Mortgage Industry 2
+  filename: http://www.somesite.com/report2.jpg
+  content_type: image/jpeg
+  size: 11017
+  height: 400
+  filename: dog_tall_narrow2.jpg
+  parent_id: 
+  width: 197
+  

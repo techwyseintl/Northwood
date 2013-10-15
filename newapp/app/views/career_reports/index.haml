@@ -1,0 +1,20 @@
+%h1 Career Reports
+
+.lgreen_box
+  .lgreen_header
+    .div
+  .lgreen_content
+    =render :partial => 'file_upload_form' if @current_user.is_admin?
+
+    .clearfloat
+    %table.list_table{:cellpadding => 0, :cellspacing => 0}
+      %tr
+        %th Report Name
+        %th{:colspan=>3} Filename
+
+      - @career_reports.each do |career_report|
+        %tr{:valign=>"top", :class=>"#{cycle('odd', 'even')}"}
+          %td
+            =career_report.name
+          %td= link_to career_report.filename, career_report.public_filename, :title=>career_report.filename
+          %td= link_to 'Delete', career_report_path(career_report), :confirm => 'Are you sure?', :method => :delete

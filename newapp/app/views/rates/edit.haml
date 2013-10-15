@@ -1,0 +1,17 @@
+%h1 Editing rate
+
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    = error_messages_for 'rate'
+    - form_for :rate, @rate, :url => rate_path(@rate), :html => {:multipart => true, :method => "put", :id => "rate_edit_form"} do
+      = render :partial => 'form'
+      = submit_tag 'Edit', :class => 'dont_display'
+
+    .button
+      = link_to 'Cancel', rates_path
+    .button
+      = link_to 'Save', '#', :onclick => "$('rate_edit_form').submit(); return false;"
+    .clearfloat

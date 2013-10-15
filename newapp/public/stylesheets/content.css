@@ -1,0 +1,252 @@
+  #main_column #content_left_column {
+    width: 300px;
+    float: left; }
+  #main_column #content_right_column {
+    width: 180px;
+    float: right; }
+
+.rate_watch, .nm_life, .apply_now, .hours_of_operation, .mortgage_solutions {
+  display: block;
+  width: 177px;
+  height: 65px;
+  margin-bottom: 15px; }
+  .rate_watch span, .nm_life span, .apply_now span, .hours_of_operation span, .mortgage_solutions span {
+    display: none; }
+
+.rate_watch {
+  background: url(/images/content/rate_watch.gif); }
+
+.nm_life {
+  background: url(/images/content/nm_life.gif); }
+
+.apply_now {
+  background: url(/images/content/apply_now.gif); }
+
+.hours_of_operation {
+  background: url(/images/content/hours_of_operation.gif); }
+
+.mortgage_solutions {
+  background: url(/images/content/mortgage_solutions.gif);
+  height: 117px; }
+
+
+p.signature {
+  margin-top: 0;
+  padding-top: 0;
+  display: block;
+  text-align: right;
+  font-weight: bold; }
+
+
+#contact_form {
+  width: 177px;
+  margin-bottom: 15px;
+  color: #1d501d;
+  background: url(/images/content/contact_form_bg.gif); }
+  #contact_form .contact_form_header {
+    height: 57px;
+    background: url(/images/content/contact_form_header.gif); }
+    #contact_form .contact_form_header h3 {
+      display: none; }
+  #contact_form .reverse_mortgages_contact_form_header {
+    height: 57px;
+    background: url(/images/content/reverse_mortgages_contact_form_header.gif); }
+    #contact_form .reverse_mortgages_contact_form_header h3 {
+      display: none; }
+  #contact_form #contact_form_error {
+    color: #883116;
+    background-color: #F89679;
+    padding: 5px 12px;
+    margin-top: 10px;
+    border-left: 1px solid #C7CDB9;
+    border-right: 1px solid #C7CDB9; }
+  #contact_form #contact_form_message {
+    background-color: #E4E4E4;
+    padding: 5px 12px;
+    margin-top: 10px;
+    border-left: 1px solid #C7CDB9;
+    border-right: 1px solid #C7CDB9; }
+  #contact_form #contact_form_content {
+    padding: 10px 12px 0px 12px; }
+    #contact_form #contact_form_content input, #contact_form #contact_form_content textarea {
+      width: 145px;
+      margin-bottom: 5px; }
+    #contact_form #contact_form_content label {
+      display: block;
+      margin-bottom: 5px; }
+    #contact_form #contact_form_content .contact_form_submit_button {
+      width: 112px;
+      height: 21px;
+      margin: auto;
+      margin-top: 10px;
+      background: url(/images/content/contact_form_submit_button_loading.gif); }
+      #contact_form #contact_form_content .contact_form_submit_button #contact_form_submit_button {
+        display: block;
+        width: 112px;
+        height: 21px;
+        background: url(/images/content/contact_form_submit_button.gif); }
+        #contact_form #contact_form_content .contact_form_submit_button #contact_form_submit_button span {
+          display: none; }
+    #contact_form #contact_form_content .note {
+      font-size: 9px; }
+  #contact_form .contact_form_footer {
+    height: 10px;
+    background: url(/images/content/contact_form_footer.gif);
+    font-size: 0; }
+
+.contact_us {
+  display: block;
+  width: 177px;
+  height: 93px;
+  margin-bottom: 15px;
+  background: url(/images/content/contact_us.gif); }
+  .contact_us span {
+    display: none; }
+
+
+#content_page_submenu {
+  float: right;
+  width: 177px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: #fff url(/images/content/page_submenu_bg.gif); }
+  #content_page_submenu #content_page_submenu_header {
+    font-size: 0;
+    height: 10px;
+    background: #fff url(/images/content/page_submenu_header.gif); }
+  #content_page_submenu #content_page_submenu_footer {
+    font-size: 0;
+    height: 10px;
+    background: #fff url(/images/content/page_submenu_footer.gif); }
+    #content_page_submenu #content_page_submenu_content ul {
+      margin-bottom: 0px; }
+      #content_page_submenu #content_page_submenu_content ul a {
+        text-decoration: none; }
+      #content_page_submenu #content_page_submenu_content ul a:hover {
+        text-decoration: underline; }
+
+
+.rental_comparison_table {
+  width: 100%;
+  margin-bottom: 20px; }
+  .rental_comparison_table .rental_comparison_table_title {
+    background-color: #29531c;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px; }
+  .rental_comparison_table td, .rental_comparison_table th {
+    border-bottom: 1px solid #eee;
+    padding: 5px; }
+  .rental_comparison_table th {
+    background-color: #9EA986; }
+
+
+.mortgage_types_table {
+  margin-bottom: 20px; }
+  .mortgage_types_table td {
+    border-bottom: 1px solid #eee;
+    padding: 5px; }
+  .mortgage_types_table .mortgage_types_table_value {
+    background-color: #FFD59D; }
+
+
+.best_mortgage_rate_table {
+  margin-bottom: 20px;
+  width: 100%; }
+  .best_mortgage_rate_table td, .best_mortgage_rate_table th {
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+    font-size: 14px; }
+  .best_mortgage_rate_table th {
+    background-color: #29531c;
+    color: #fff;
+    font-size: 16px; }
+
+
+#selection {
+  margin: 0 0 0 90px; }
+  #selection .sel_group {
+    margin: 0 0 5px 0; }
+  #selection input {
+    margin: 0 10px 0 0; }
+
+
+.calculator_green_box, .calculator_orange_box, .calculator_blue_box {
+  width: 151px;
+  height: 47px;
+  float: left;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: Times New Roman;
+  padding-top: 4px; }
+
+.selected_box {
+  color: #000; }
+
+.calculator_green_box {
+  background: url(/images/calculator_green_box.gif); }
+
+.calculator_orange_box {
+  background: url(/images/calculator_orange_box.gif); }
+
+.calculator_blue_box {
+  background: url(/images/calculator_blue_box.gif);
+  margin-right: 0px; }
+
+
+    .payment_calculator dl.form_list dt {
+      width: 250px; }
+      .payment_calculator dl.form_list dd input {
+        width: 100px; }
+
+
+  .mortgage_qualifier dl.form_list {
+    float: left; }
+    .mortgage_qualifier dl.form_list dt {
+      width: 90px; }
+      .mortgage_qualifier dl.form_list dd input {
+        width: 90px; }
+  .mortgage_qualifier table {
+    width: 100%;
+    margin-bottom: 15px; }
+    .mortgage_qualifier table th {
+      text-align: left;
+      border-bottom: 1px solid #849f84;
+      padding: 5px; }
+    .mortgage_qualifier table td {
+      padding: 5px; }
+      .mortgage_qualifier table td input {
+        width: 85px; }
+    .mortgage_qualifier table tr.even {
+      background-color: #c7d3c7; }
+
+.contact_page {
+  padding: 10px 0px 0px 0px; }
+  .contact_page .left_column, .contact_page .right_column {
+    width: 240px; }
+    .contact_page .left_column input, .contact_page .left_column textarea, .contact_page .right_column input, .contact_page .right_column textarea {
+      width: 205px;
+      margin-bottom: 5px; }
+    .contact_page .left_column label, .contact_page .right_column label {
+      display: block;
+      margin-bottom: 5px; }
+    .contact_page .left_column .contact_form_submit_button, .contact_page .right_column .contact_form_submit_button {
+      width: 112px;
+      height: 21px;
+      margin: auto;
+      margin: 10px 0 0 45px;
+      background: url(/images/content/contact_form_submit_button_loading.gif); }
+      .contact_page .left_column .contact_form_submit_button #contact_form_submit_button, .contact_page .right_column .contact_form_submit_button #contact_form_submit_button {
+        display: block;
+        width: 112px;
+        height: 21px;
+        background: url(/images/content/contact_form_submit_button.gif); }
+        .contact_page .left_column .contact_form_submit_button #contact_form_submit_button span, .contact_page .right_column .contact_form_submit_button #contact_form_submit_button span {
+          display: none; }

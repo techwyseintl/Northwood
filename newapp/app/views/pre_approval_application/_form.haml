@@ -1,0 +1,105 @@
+%h3{:style=>"padding: 0 0 15px 0"} Loan information  
+%dl.pre_approval   
+  %dt
+    %label{:for=>"pre_approval_notes_applicant_amount_requested"} Amount Requested:
+  %dd
+    = text_field 'pre_approval_notes', 'amount_applicant_requested', :name=>'contact[pre_approval_notes][applicant_amount_requested]', :value=>@contact.pre_approval_notes[:applicant_amount_requested]
+
+  %dt
+    %label{:for=>"pre_approval_notes_applicant_purpose_of_loan"} Purpose of Loan:
+  %dd
+    = select 'pre_approval_notes', 'applicant_purpose_of_loan', Contact.purpose_of_loan_options, {:selected => @contact.pre_approval_notes[:applicant_purpose_of_loan]}, {:name=>'contact[pre_approval_notes][applicant_purpose_of_loan]', :style => 'width: 170px;'}
+
+
+%h3{:style=>"padding: 10px 0 15px 0"} Applicant Personal Information 
+%dl.pre_approval
+  %dt
+    %label{:for=>"contact_first_name"} First Name:
+  %dd
+    = text_field 'contact', 'first_name'
+  
+  %dt
+    %label{:for=>"contact_last_name"} Last Name:
+  %dd
+    = text_field 'contact', 'last_name'
+          
+  %dt
+    %label{:for=>"contact_address"} Address:
+  %dd
+    ~ text_area 'contact', 'address', 'cols' => 29, 'rows' => 2
+    
+  %dt
+    %label{:for=>"contact_phone"} Home Phone:
+  %dd
+    = text_field 'contact', 'phone'
+
+  %dt
+    %label{:for=>"contact_mobile"} Mobile Phone:
+  %dd
+    = text_field 'contact', 'mobile'
+      
+  %dt
+    %label{:for=>"contact_fax"} Fax:
+  %dd
+    = text_field 'contact', 'fax'
+
+  %dt
+    %label{:for=>"contact_email"} Email:
+  %dd
+    = text_field 'contact', 'email'
+
+  %dt
+    %label{:for=>"pre_approval_notes_applicant_type_of_income"} Type of Income:
+  %dd
+    = select 'pre_approval_notes', 'applicant_type_of_income', Contact.type_of_income_options, {:selected => @contact.pre_approval_notes[:applicant_type_of_income]}, {:name=>'contact[pre_approval_notes][applicant_type_of_income]', :style => 'width: 170px;'}          
+
+  %dt
+    %label{:for=>"pre_approval_notes_applicant_total_annual_income"} Total Annual Income:
+  %dd
+    = text_field 'pre_approval_notes', 'applicant_total_annual_income', :name=>'contact[pre_approval_notes][applicant_total_annual_income]', :value=>@contact.pre_approval_notes[:applicant_total_annual_income]
+    
+  %dt
+    %label{:for=>"pre_approval_notes_applicant_how_did_you_hear_about_us"} How did you hear about us:
+  %dd
+    = select 'pre_approval_notes', 'applicant_how_did_you_hear_about_us', Contact.how_did_you_hear_about_us_options, {:selected => @contact.pre_approval_notes[:applicant_how_did_you_hear_about_us]}, {:onchange => 'set_applicant_how_did_you_hear_about_us_text_visibility()', :name=>'contact[pre_approval_notes][applicant_how_did_you_hear_about_us]', :style => 'width: 170px;'}  
+
+  %dt#applicant_how_did_you_hear_about_us_text_label{:style => 'display: none'}
+    %label{:for=>"pre_approval_notes_applicant_how_did_you_hear_about_us_text"} Please provide details as to how you heard about us:
+  %dd#applicant_how_did_you_hear_about_us_text{:style => 'display: none'}
+    = text_area 'pre_approval_notes', 'applicant_how_did_you_hear_about_us_text', :name=>'contact[pre_approval_notes][applicant_how_did_you_hear_about_us_text]', :value=>@contact.pre_approval_notes[:applicant_how_did_you_hear_about_us_text], :rows => "4"
+
+%script{:type => "text/javascript"}            
+  set_applicant_how_did_you_hear_about_us_text_visibility()
+            
+%h3{:style=>"padding: 10px 0 15px 0"} Co - Applicant Personal Information   
+%dl.pre_approval     
+  %dt
+    %label{:for=>"pre_approval_notes_co_applicant_first_name"} First Name:
+  %dd
+    = text_field 'pre_approval_notes', 'co_applicant_first_name', :name=>'contact[pre_approval_notes][co_applicant_first_name]', :value=>@contact.pre_approval_notes[:co_applicant_first_name]
+  
+  %dt
+    %label{:for=>"pre_approval_notes_co_applicant_last_name"} Last Name:
+  %dd
+    = text_field 'pre_approval_notes', 'co_applicant_last_name', :name=>'contact[pre_approval_notes][co_applicant_last_name]', :value=>@contact.pre_approval_notes[:co_applicant_last_name]
+  
+  %dt
+    %label{:for=>"pre_approval_notes_co_applicant_type_of_income"} Type of Income:
+  %dd
+    = select 'pre_approval_notes', 'co_applicant_type_of_income', Contact.type_of_income_options, {:selected => @contact.pre_approval_notes[:co_applicant_type_of_income]}, {:name=>'contact[pre_approval_notes][co_applicant_type_of_income]', :style => 'width: 170px;'}          
+          
+  %dt
+    %label{:for=>"pre_approval_notes_co_applicant_total_annual_income"} Total Annual Income:
+  %dd
+    = text_field 'pre_approval_notes', 'co_applicant_total_annual_income', :name=>'contact[pre_approval_notes][co_applicant_total_annual_income]', :value=>@contact.pre_approval_notes[:co_applicant_total_annual_income]
+    
+
+- if !@agent    
+  %h3{:style=>"padding: 10px 0 15px 0"}Have you spoken with one of our Mortgage Agents already?
+  %dl.pre_approval
+    %dt
+      %label{:for=>"pre_approval_notes_agent_name"} Agent's Name:
+    %dd
+      = text_field 'pre_approval_notes', 'agent_name', :name=>'contact[pre_approval_notes][agent_name]', :value=>@contact.pre_approval_notes[:agent_name]
+
+.clearfloat

@@ -1,0 +1,16 @@
+.dgreen_box
+  .dgreen_header
+    %div
+  .dgreen_content{:style => "padding: 0px 20px"}
+    
+    - path = @public_area ? '' : users_path
+    
+    - form_tag path, :method => 'get' do
+      .button{:style=>'float:right'}
+        = link_to 'Search', '#', :onclick => "$('agent_search_form').click(); return false;"
+      %label{:for=>"first_name"} Name/Email: 
+      = text_field_tag 'search_string', params[:search_string], :style => 'width: 250px'
+      = submit_tag 'Search', :id => "agent_search_form", :class => 'dont_display'
+      .clearfloat
+  .dgreen_footer
+    %div

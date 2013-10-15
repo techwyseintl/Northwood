@@ -1,0 +1,81 @@
+contact_with_one_subscription:
+  id: 1
+  user_id: 1
+  first_name: Oleg's
+  last_name:  contact with no subscriptions
+  address: 111 Contacts St.
+  mobile: ''
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: contact_with_one_subscriptions@workingdata.net
+  notes: ''
+  
+contact_with_no_subscriptions:
+  id: 2
+  user_id: 1
+  first_name: Oleg's
+  last_name:  contact with no subscriptions
+  address: 111 Contacts St.
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: contact_with_no_subscriptions@workingdata.net
+  notes: ''
+  
+# Oleg's contacts
+<% 3.upto(6) do |id| %>
+contact<%= id %>:
+  id: <%= id %>
+  user_id: 1 
+  first_name: Oleg's
+  last_name:  Contact <%= id %>
+  address: 111 Contacts St.
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: matrix_has_you<%= id%>@workingdata.net
+  notes: ''
+<% end %>
+
+# Jack's contacts
+<% 7.upto(20) do |id| %>
+contact<%= id %>:
+  id: <%= id %>
+  user_id: 2 
+  first_name: Jack's
+  last_name:  Contact <%= id %>
+  address: 111 Contacts St.
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: matrix_has_you<%= id%>@workingdata.net
+  notes: ''
+<% end %>
+
+# Unassigned Contacts
+<% 21.upto(25) do |id| %>
+contact<%= id %>:
+  id: <%= id %>
+  user_id:
+  first_name: Mistery
+  last_name:  Contact <%= id %>
+  address: 111 Contacts St.
+  mobile: 444-444-4444
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: matrix_has_you<%= id%>@workingdata.net
+  notes: ''
+<% end %>
+
+
+agent_smith_contact:
+  id: 26
+  user_id: 10
+  first_name: Smiths
+  last_name:  Contact
+  address: 111 Contacts St.
+  mobile: ''
+  fax: 333-333-3333
+  phone: 555-555-5555
+  email: contact_smith@workingdata.net
+  notes: ''

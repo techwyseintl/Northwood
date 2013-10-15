@@ -1,0 +1,24 @@
+#contact_form
+  .contact_form_header
+    %h3 I would like to be contacted
+  #contact_form_message{:style=>'display:none'}
+  #contact_form_error{:style=>'display:none'}
+  #contact_form_content
+    - remote_form_for :contact, @contact, :url => mortgage_life_contact_request_path, :before => "Element.hide('contact_form_submit_button')" do |f|
+      %label First Name:
+      = text_field 'contact', 'first_name', :id => 'first_name', :maxlength => 40
+      %label Last Name:
+      = text_field 'contact', 'last_name', :id => 'last_name', :maxlength => 40
+      %label Phone:
+      = text_field 'contact', 'phone', :id => 'phone', :maxlength => 40
+      %label Email:
+      = text_field 'contact', 'email', :id => 'email', :maxlength => 40
+      %label Comments:
+      ~ text_area 'contact', 'notes', :id => 'comments', :rows => 5, :cols => 15
+      .note *All fields are mandatory
+      = submit_tag 'Submit Registration', :style=> 'display:none', :id=>"nm_contact_form_submit"
+      
+      .contact_form_submit_button
+        = link_to "<span>Send Request</span>", "", :onclick => "$('nm_contact_form_submit').click(); return false;", :id => 'contact_form_submit_button'
+      
+  .contact_form_footer

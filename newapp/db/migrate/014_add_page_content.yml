@@ -1,0 +1,196 @@
+--- 
+- !ruby/object:Page
+  attributes: 
+    html: <p><span class="caps">TODO</span></p>
+    name: About Us - Strategic Alliances
+    text: TODO
+    id: "9"
+- !ruby/object:Page
+  attributes:
+    html: <p><span class="caps">TODO</span></p>
+    name: Mortgage Solutions
+    text: TODO
+    id: "10"
+- !ruby/object:Page
+  attributes:
+    html: <p><span class="caps">TODO</span></p>
+    name: Mortgage Solutions - Information
+    text: TODO
+    id: "11"
+- !ruby/object:Page
+  attributes: 
+    html: <p><span class="caps">TODO</span></p>
+    name: Client Testimonials
+    text: TODO
+    id: "12"
+- !ruby/object:Page
+  attributes:
+    html: <p><span class="caps">TODO</span></p>
+    name: Contact Us
+    text: TODO
+    id: "13"
+- !ruby/object:Page
+  attributes: 
+    html: "<p>Northwood Mortgage Ltd. is one of the <span class=\"caps\">GTA</span>\xE2\x80\x99s largest brokerage firms. We provide unmatched mortgage funding and investment services.</p>\n\n\n\
+      \t<p>Whether you need a mortgage for your home or for a commercial property; whatever your personal circumstances may be, Northwood Mortgage can help.</p>\n\n\n\
+      \t<p>Northwood Mortgage prides itself on being able to help you finance your home or business property when others cannot.</p>\n\n\n\
+      \t<p>Each year, we loan approximately half a billion dollars to homeowners as well as industrial and commercial businesses.</p>\n\n\n\
+      \t<p>Our well-established relationships with over 100 moneylenders &#8211; including Canada\xE2\x80\x99s four major banks &#8211; allows us to guarantee you the best possible mortgage rates.</p>\n\n\n\
+      \t<p>With our full range of services, we offer one-stop shop mortgage and financing solutions to fulfill all your lending requirements.</p>\n\n\n\
+      \t<p>Contact us directly to learn more about how we can help you.</p>"
+    name: Home Page
+    text: "Northwood Mortgage Ltd. is one of the GTA\xE2\x80\x99s largest brokerage firms. We provide unmatched mortgage funding and investment services. \r\n\
+      \r\n\
+      Whether you need a mortgage for your home or for a commercial property; whatever your personal circumstances may be, Northwood Mortgage can help. \r\n\
+      \r\n\
+      Northwood Mortgage prides itself on being able to help you finance your home or business property when others cannot.\r\n\
+      \r\n\
+      Each year, we loan approximately half a billion dollars to homeowners as well as industrial and commercial businesses. \r\n\
+      \r\n\
+      Our well-established relationships with over 100 moneylenders - including Canada\xE2\x80\x99s four major banks - allows us to guarantee you the best possible mortgage rates. \r\n\
+      \r\n\
+      With our full range of services, we offer one-stop shop mortgage and financing solutions to fulfill all your lending requirements. \r\n\
+      \r\n\
+      Contact us directly to learn more about how we can help you. "
+    id: "2"
+- !ruby/object:Page
+  attributes:
+    html: <p><span class="caps">TODO</span></p>
+    name: Northwood Mortgage Life
+    text: TODO
+    id: "14"
+- !ruby/object:Page
+  attributes:
+    html: "<p>Established in 1990, Northwood Mortgage Ltd. is one of the largest brokerages in the <span class=\"caps\">GTA</span>. With a staff of over 155 professionals, we offer only the highest quality services and products to our customers, lenders and investors alike.</p>\n\n\n\
+      \t<p>As mortgage specialists, we have unmatched abilities to underwrite, place and fund residential prime and sub-prime mortgages. As a Northwood Mortgage customer, this means that when other companies say no to lending, we look to find a way to say yes.</p>\n\n\n\
+      \t<p>We are also experts in commercial, industrial or investment mortgage placements and are leaders in credit recovery refinancing. For you, this means Northwood Mortgage works with you to help you get back what you are owed.</p>\n\n\n\
+      \t<p>Northwood Mortgage Ltd. and all of our managers and agents are members of The Canadian Institute of Mortgage Brokers and Lenders (CIMBL), and subscribe to its by-Laws, code of ethics and standards of professional practice (CIMBL boasts most of Canada\xE2\x80\x99s institutional lenders, including major chartered banks, as its members).  We are also proud to be a part of the Independent Mortgage Brokers Association.</p>"
+    name: About Us
+    text: "Established in 1990, Northwood Mortgage Ltd. is one of the largest brokerages in the GTA. With a staff of over 155 professionals, we offer only the highest quality services and products to our customers, lenders and investors alike.\r\n\
+      \r\n\
+      As mortgage specialists, we have unmatched abilities to underwrite, place and fund residential prime and sub-prime mortgages. As a Northwood Mortgage customer, this means that when other companies say no to lending, we look to find a way to say yes.\r\n\
+      \r\n\
+      We are also experts in commercial, industrial or investment mortgage placements and are leaders in credit recovery refinancing. For you, this means Northwood Mortgage works with you to help you get back what you are owed. \r\n\
+      \r\n\
+      Northwood Mortgage Ltd. and all of our managers and agents are members of The Canadian Institute of Mortgage Brokers and Lenders (CIMBL), and subscribe to its by-Laws, code of ethics and standards of professional practice (CIMBL boasts most of Canada\xE2\x80\x99s institutional lenders, including major chartered banks, as its members).  We are also proud to be a part of the Independent Mortgage Brokers Association. "
+    id: "3"
+- !ruby/object:Page
+  attributes:
+    html: "<p>Northwood Mortgages was established over 16 years ago and is now one of the <span class=\"caps\">GTA</span>\xE2\x80\x99s top mortgage brokerage firms.</p>\n\n\n\
+      \t<p>Our plans are exciting and we&#8217;re always looking to recruit talented and self-motivated individuals to share our vision and help take our business forward. As a member of our team you will receive all the training and support you need to help become an expert in the mortgage field. We are committed to developing you into a top performer &#8211; the future growth and success of our company depends on it.</p>\n\n\n\
+      \t<p>To learn more about Northwood Mortgage Ltd., send us an email. We promise to respond by sending you information to help you learn more about us and decide if the mortgage brokerage world is right for you.</p>"
+    name: Careers
+    text: "Northwood Mortgages was established over 16 years ago and is now one of the GTA\xE2\x80\x99s top mortgage brokerage firms. \r\n\
+      \r\n\
+      Our plans are exciting and we're always looking to recruit talented and self-motivated individuals to share our vision and help take our business forward. As a member of our team you will receive all the training and support you need to help become an expert in the mortgage field. We are committed to developing you into a top performer - the future growth and success of our company depends on it.\r\n\
+      \r\n\
+      To learn more about Northwood Mortgage Ltd., send us an email. We promise to respond by sending you information to help you learn more about us and decide if the mortgage brokerage world is right for you."
+    id: "4"
+- !ruby/object:Page
+  attributes:
+    html: "<p>At Northwood Mortgage we take the time to listen to your needs and look at the whole picture to approve your first mortgage. This includes situations that fall outside traditional lending categories and include:</p>\n\n\n\
+      \t<ul>\n\
+      \t<li>Self-employed </li>\n\
+      \t\t<li>Non-income verifiers</li>\n\
+      \t\t<li>Credit issues</li>\n\
+      \t\t<li>Financial distress situations</li>\n\
+      \t\t<li>New immigrants</li>\n\
+      \t</ul>\n\n\n\
+      \t<p>We recognize that each one of our clients has individual needs, and our products and services reflect this.</p>\n\n\n\
+      Whether you are taking on your first or second mortgage, Northwood Mortgage offers a number of services to help you:\n\
+      \t<ul>\n\
+      \t<li>consolidate your debts to improve cash flow;</li>\n\
+      \t\t<li>turn your home equity into cash when you need it most (home repairs and renovations, education financing, special events like vacations and weddings);</li>\n\
+      \t\t<li>earn a return on your home equity through investments.</li>\n\
+      \t</ul>\n\n\n\
+      And our commitment to you is to find the best: \n\
+      \t<ul>\n\
+      \t<li>prime mortgages well below posted rates;</li>\n\
+      \t\t<li>construction and bridge financing;</li>\n\
+      \t\t<li>high ratio second and third mortgages;</li>\n\
+      \t\t<li>financing, up to 104% loan-to-value.</li>\n\
+      \t</ul>\n\n\n\
+      \t<p>We aim to provide you with a high level of tangible savings. We do this by developing well-established relationships with many of Canada\xE2\x80\x99s most stable and respected Financial Service companies. This gives you access to an extensive and professional range of products and services.</p>\n\n\n\
+      \t<p>To learn more about how Northwood Mortgage Ltd. can help you, contact us at info@northwoodmortgage.com or 1-888-257-8130.</p>"
+    name: Mortgage Solutions - Residential
+    text: "At Northwood Mortgage we take the time to listen to your needs and look at the whole picture to approve your first mortgage. This includes situations that fall outside traditional lending categories and include: \r\n\
+      \r\n\
+      * Self-employed \r\n\
+      * Non-income verifiers\r\n\
+      * Credit issues\r\n\
+      * Financial distress situations\r\n\
+      * New immigrants\r\n\
+      \r\n\
+      We recognize that each one of our clients has individual needs, and our products and services reflect this.  \r\n\
+      \r\n\
+      Whether you are taking on your first or second mortgage, Northwood Mortgage offers a number of services to help you:\r\n\
+      * consolidate your debts to improve cash flow;\r\n\
+      * turn your home equity into cash when you need it most (home repairs and renovations, education financing, special events like vacations and weddings);\r\n\
+      * earn a return on your home equity through investments.\r\n\
+      \r\n\
+      And our commitment to you is to find the best: \r\n\
+      * prime mortgages well below posted rates;\r\n\
+      * construction and bridge financing;\r\n\
+      * high ratio second and third mortgages;\r\n\
+      * financing, up to 104% loan-to-value.\r\n\
+      \r\n\
+      \r\n\
+      We aim to provide you with a high level of tangible savings. We do this by developing well-established relationships with many of Canada\xE2\x80\x99s most stable and respected Financial Service companies. This gives you access to an extensive and professional range of products and services. \r\n\
+      \r\n\
+      To learn more about how Northwood Mortgage Ltd. can help you, contact us at info@northwoodmortgage.com or 1-888-257-8130."
+    id: "5"
+- !ruby/object:Page
+  attributes: 
+    html: |-
+      <p>Northwood Mortgage has over 50 years of combined experience in commercial, industrial and investment mortgages.</p>
+    
+    
+      We offer finance options for any size project:
+      	<ul>
+      	<li>plazas</li>
+      		<li>factories</li>
+      		<li>office buildings</li>
+      		<li>raw land</li>
+      		<li>institutional and specialty properties</li>
+      		<li>land servicing and development</li>
+      		<li>Apartment buildings (from fourplex to high rise)</li>
+      	</ul>
+    
+    
+      	<p>Northwood Mortgage provides you with a high level of savings and service levels that are second to none.</p>
+    
+    
+      	<p>Contact our commercial and industrial specialist Steve Kates and speak to him about how we can help you.</p>
+    
+    
+      	<p>Steve Kates, VP: (416) 969-8130 Ext. 233 steve@northwoodmortgage.com</p>
+    name: Mortgage Solutions - Commercial
+    text: "Northwood Mortgage has over 50 years of combined experience in commercial, industrial and investment mortgages. \r\n\
+      \r\n\
+      We offer finance options for any size project:\r\n\
+      * plazas\r\n\
+      * factories\r\n\
+      * office buildings\r\n\
+      * raw land\r\n\
+      * institutional and specialty properties\r\n\
+      * land servicing and development\r\n\
+      * Apartment buildings (from fourplex to high rise)\r\n\
+      \r\n\
+      Northwood Mortgage provides you with a high level of savings and service levels that are second to none. \r\n\
+      \r\n\
+      Contact our commercial and industrial specialist Steve Kates and speak to him about how we can help you. \r\n\
+      \r\n\
+      Steve Kates, VP: (416) 969-8130 Ext. 233 steve@northwoodmortgage.com "
+    id: "6"
+- !ruby/object:Page
+  attributes:
+    html: <p><span class="caps">TODO</span></p>
+    name: About Us - Management Profiles
+    text: TODO
+    id: "7"
+- !ruby/object:Page
+  attributes:
+    html: <p><span class="caps">TODO</span></p>
+    name: About Us - Investor Information
+    text: TODO
+    id: "8"

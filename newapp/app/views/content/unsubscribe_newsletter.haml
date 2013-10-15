@@ -1,0 +1,26 @@
+%h1="Unsubscribe to #{@newsletter.name}"
+
+%p="You are about to unsubscribe from the #{@newsletter.name} newsletter."
+.dgreen_box
+  .dgreen_header
+    %div
+  .dgreen_content{:style => "padding: 0px 20px"}
+    
+    = error_messages_for 'newsletter'
+
+
+    - form_for :newsletter, @newsletter, :url => unsubscribe_newsletter_path(:id=>@newsletter.id, :email=>params[:email][0]), :html => {:id => 'unsubscribe_newsletter_form'} do |f|
+      .button{:style => 'float: right'}
+        = link_to 'Cancel', '/'
+      .button{:style => 'float: right'}
+        = link_to 'unsubscribe', '#', :onclick => "$('unsubscribe_newsletter_form').submit(); return false;"
+      
+      %label{:for=>"newsletter_email"} Email:
+      = text_field 'newsletter', 'email', :value=>params[:email][0]
+      
+      = submit_tag "Create", :class => 'dont_display'
+
+
+    .clearfloat
+  .dgreen_footer
+    %div      

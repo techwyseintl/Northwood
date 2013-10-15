@@ -1,0 +1,17 @@
+%h1 Editing Page
+
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    = error_messages_for :page
+    - form_for :page, @page, :url => page_path(@page), :html => {:multipart => true, :method => "put", :id => "page_edit_form"} do
+      = render :partial => 'form', :locals => {:page => @page}
+      = submit_tag 'Edit', :class => 'dont_display'
+
+    .button
+      = link_to 'Cancel', pages_path
+    .button
+      = link_to 'Save', '#', :onclick => "$('page_edit_form').submit(); return false;"
+    .clearfloat

@@ -1,0 +1,16 @@
+%h1 Add Referral Page
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    = error_messages_for :referral
+
+    - form_for :referral, @referral, :url => referrals_path(), :html => {:method => :post, :id => "new_referral_form"} do |f|
+      = render :partial => 'form'
+      = submit_tag "Create", :class => 'dont_display'
+
+    .button
+      = link_to 'Cancel', referrals_path
+    .button
+      = link_to 'Save', '#', :onclick => "$('new_referral_form').submit(); return false;"
+    .clearfloat

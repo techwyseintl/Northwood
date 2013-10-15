@@ -1,0 +1,17 @@
+issue_one:
+  id: 1
+  newsletter_id: 1
+  subject: First issue
+  text: hi
+  plain_text: hi
+  html: <p>hi</p>
+  status: 0
+issue_two:
+  id: 2
+  newsletter_id: 1
+  subject: Second issue
+  text: hello
+  plain_text: hello
+  html: <p>hello</p>
+  status: 1
+  

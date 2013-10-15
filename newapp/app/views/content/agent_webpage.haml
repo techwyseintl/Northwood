@@ -1,0 +1,34 @@
+%h1{:style=>"text-align: center; font-size: 25px"}
+  = @user.full_name
+  %br/
+  %span{:style => "font-size: 22px"}= @user.job_title
+
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    - if @user.photo
+      #user_photo_box
+        = image_tag url_for_file_column('user', 'photo') unless @user.photo == nil
+    %h2{:style=>"margin-left: 90px"} Contact Information
+    %dl.form_list
+      
+      %dt Address:
+      %dd{:style=>'width:200px'}= value_or_space nl2br(@user.address)
+      
+      %dt Direct Phone:
+      %dd{:style=>'width:200px'}= value_or_space @user.phone
+      
+      - unless @user.mobile.blank?
+        %dt Mobile Phone:
+        %dd{:style=>'width:200px'}= value_or_space @user.mobile
+
+      - unless @user.fax.blank?      
+        %dt Fax:
+        %dd{:style=>'width:200px'}= value_or_space @user.fax
+      
+      %dt Email:
+      %dd=mail_to @user.email, @user.email, :encode => 'hex'
+
+%div{:style=>"margin-left: 110px;padding-right: 10px"}      
+  = @user.webpage_html

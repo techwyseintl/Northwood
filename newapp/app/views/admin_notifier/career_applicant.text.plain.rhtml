@@ -1,0 +1,18 @@
+Dear <%=@user.full_name%>
+
+A new career applicant has registered on the website:
+
+Name: <%= @career_applicant.full_name %>
+Email: <%= @career_applicant.email %>
+
+<% if @career_applicant.career_reports.size == 0 %>
+The applicant did not request any reports.
+<% else %>
+The following list of document was requested by the applicant:
+  <% @career_applicant.career_reports.each do |report| %>
+    * <%= report.name %>: <%= SITE_URL+report.public_filename %>
+  <% end %>
+<% end %>
+
+Sincerely,
+Northwood Mortgage

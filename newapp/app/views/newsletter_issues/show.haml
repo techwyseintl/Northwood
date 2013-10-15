@@ -1,0 +1,10 @@
+%h1="#{@newsletter.name}  - #{@newsletter_issue.subject}"
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    %div= @newsletter_issue.html
+    
+    .button
+      = link_to "Back to #{@newsletter.name} issues", newsletter_issues_path(@newsletter)
+    .clearfloat

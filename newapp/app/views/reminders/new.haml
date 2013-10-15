@@ -1,0 +1,14 @@
+.reminder_new
+  -remote_form_for :reminder, @reminder, :url => reminders_path(), :update => "reminders", :before => "Effect.BlindUp('new_reminder', {duration:0.2})", :complete => "Effect.BlindDown('new_reminder_link', {duration:0.2})" do |f|
+  
+    = render :partial => 'form'
+  
+    = submit_tag 'Save', :id => 'reminder_new_form', :class => 'dont_display'
+    
+    
+    = link_to_function 'Cancel', "Effect.BlindUp('new_reminder', {duration:0.2});Effect.BlindDown('new_reminder_link', {duration:0.2})"
+    = link_to 'Save', '#', :onclick => "$('reminder_new_form').click(); return false;"
+    .clearfloat
+    
+    
+    

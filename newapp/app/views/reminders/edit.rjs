@@ -1,0 +1,3 @@
+page.hide "reminder_edit_icon_#{@reminder.id}"
+page.replace_html "reminder_#{@reminder.id}", :partial => 'reminders/edit', :locals => {:reminder => @reminder}
+page.visual_effect :BlindDown, "reminder_#{@reminder.id}", :duration => 0.2

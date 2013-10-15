@@ -1,0 +1,22 @@
+= display_page('Mortgage Renewal')
+
+.lgreen_box
+  .lgreen_header
+  .lgreen_content
+  
+    - form_tag mortgage_renew_request_path, :id => 'mortgage_renewal_form' do
+      %dl.form_list
+        %dt
+          %label Name:
+        %dd.user_form= text_field_tag 'renew[name]'
+        
+        %dt
+          %label Email:
+        %dd.user_form= text_field_tag 'renew[email]'
+        
+        %dt
+          %label Mortgage Maturity Date:
+        %dd.user_form= text_field_tag 'renew[maturity_date]'
+      
+      .button
+        = link_to_function 'Send Inquiry', "$('mortgage_renewal_form').submit()"

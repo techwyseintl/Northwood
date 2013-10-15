@@ -1,0 +1,19 @@
+= render :partial=> 'layouts/user_navigation', :locals => { :section => "Contacts" }
+  
+  
+.lgreen_box
+  .lgreen_header
+    %div
+  .lgreen_content
+    %h2 CONTACT DETAILS
+    
+    = error_messages_for 'contact'
+    - form_for :contact, @contact, :url => contacts_path(@user), :html => {:method => :post, :id => 'contact_create_form'} do |f|
+      = render :partial => 'form'
+      = submit_tag "Create", :class => 'dont_display'
+
+    .button
+      = link_to 'Cancel', contacts_path(params[:user_id])
+    .button
+      = link_to 'Save', '#', :onclick => "$('contact_create_form').submit(); return false;"
+    .clearfloat

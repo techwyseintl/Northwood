@@ -1,0 +1,18 @@
+#content_left_column
+  %h1 Welcome
+
+  = display_page('Home Page')
+
+#content_right_column
+  = link_to '<span>Mortgage Solutions</span>', '/mortgages', :class => 'mortgage_solutions'
+  = link_to '<span>Apply Now</span>', pre_approval_application_path, :class => 'apply_now'
+  = link_to '<span>Northwood Mortgage Life</span>', '/northwood-mortgage-life', :class => 'nm_life'
+  = link_to '<span>Subscribe to Rate Watch</span>', rate_watch_signup_path, :class => 'rate_watch'
+  .hours_of_operation 
+    %span 
+      Hours of Operation:
+      %br/
+      Mon-Fri: 8:30am to 8:30pm
+      %br/
+      Sat: 9:00am to 5:00pm
+    

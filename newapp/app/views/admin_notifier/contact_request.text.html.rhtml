@@ -1,0 +1,20 @@
+<p>
+  Dear <%=@user.full_name%>
+</p>
+<p>
+  This message was sent to you via Northwood messaging system.
+</p>
+<p>
+  This person would like to get in touch with somebody:
+</p>
+<ul>
+  <li>Name: <%= @contact.full_name %></li>
+  <li>Phone: <%= @contact.phone %></li>
+  <li>Email: <%= @contact.email %></li>
+  <li>Note: <%= nl2br @contact.notes %></li>
+</ul>
+<p>
+  Sincerely,
+  <br />
+  Northwood Mortgage Administrator
+</p>
